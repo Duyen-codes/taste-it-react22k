@@ -4,11 +4,12 @@ import Layout from "./components/pages/Layout";
 import Home from "./components/Home";
 import RecipeList from "./components/RecipeList";
 import AddNewRecipe from "./components/AddNewRecipe";
-import Recipe from "./components/RecipeSingle";
+import RecipeSingle from "./components/RecipeSingle";
+import axios from "axios";
 
 const RouterWrapper = (props) => {
   const params = useParams();
-  return <Recipe params={params} {...props} />;
+  return <RecipeSingle params={params} {...props} />;
 };
 const App = () => {
   const [inputData, setInputData] = useState({
@@ -26,13 +27,18 @@ const App = () => {
   });
   const [recipes, setRecipes] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    axios.get("http://localhost:3001/recipes").then((response) => {
+      console.log(response.data);
+      setRecipes(response.data);
+    });
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="recipes" element={<RecipeList />} />
+          <Route path="recipes" element={<RecipeList recipes={recipes} />} />
           <Route path="recipes/:recipe" element={<RouterWrapper />} />
           <Route path="addRecipe" element={<AddNewRecipe />} />
         </Route>

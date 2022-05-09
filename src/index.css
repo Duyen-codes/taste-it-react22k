@@ -88,3 +88,14 @@ h3 {
   border: 1px solid #ddd;
   padding: 1rem;
 }
+
+/* RecipeList  */
+.recipe-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+}

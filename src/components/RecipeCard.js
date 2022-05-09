@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RecipeCard = (props) => {
+const RecipeCard = ({
+  name,
+  author,
+  country,
+  description,
+  imageURL,
+  ingredients,
+  instructions,
+}) => {
   return (
-    <div>
-      <p>Recipe Card will be here</p>
-      <Link to="/">See more</Link>
+    <div className="recipe-card">
+      <p>{name}</p>
+      <p>{description}</p>
+      <Link to={name}>See more</Link>
     </div>
   );
 };
