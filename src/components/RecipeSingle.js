@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
   console.log("from RecipeSingle", props);
@@ -19,13 +20,17 @@ const RecipeSingle = (props) => {
   }, []);
 
   return (
-    <>
+    <div className={styles["recipe-single"]}>
       <h3>{data.name}</h3>
       {!data && <p>Loading...</p>}
       {data && (
         <div>
-          <img src={data.imageURL} alt={data.name} />
-          <section className="content-wrapper">
+          <section className={styles["recipe-single-top"]}>
+            <img src={data.imageURL} alt={data.name} />
+            <p>{data.description}</p>
+          </section>
+
+          <section className={styles["recipe-single-bottom"]}>
             <div>
               <h3>Ingredients</h3>
               {data.ingredients?.map((item) => (
@@ -43,7 +48,7 @@ const RecipeSingle = (props) => {
           </section>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

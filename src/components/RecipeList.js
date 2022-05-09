@@ -2,13 +2,19 @@ import React from "react";
 import RecipeCard from "./RecipeCard";
 
 const RecipeList = (props) => {
+  console.log("RecipeList:", props);
   return (
     <div>
       <h2>Recipe list</h2>
-      <form action="">
-        <label htmlFor="search-recipe">Search for recipe:</label>
-        <input type="text" />
-      </form>
+
+      <label htmlFor="search-recipe">Search for recipe:</label>
+      <input
+        type="search"
+        onChange={props.onChange}
+        value={props.search}
+        placeholder="Search recipe..."
+      />
+
       <h3>Our recipes/ Recipe List</h3>
       {!props.recipes && <p>Loading...</p>}
       {props.recipes && (
