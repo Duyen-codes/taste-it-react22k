@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   font-size: 1.8rem;
   line-height: 1.7;

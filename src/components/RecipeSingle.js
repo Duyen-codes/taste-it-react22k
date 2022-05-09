@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect, useParams } from "react";
+import React, { useState, useEffect } from "react";
 
 const RecipeSingle = (props) => {
   console.log("from RecipeSingle", props);
@@ -13,13 +13,20 @@ const RecipeSingle = (props) => {
       setData(res.data);
     });
   }, []);
-  {
-    loading && <p>Loading...</p>;
-  }
+
   return (
     <div>
       <h2>Single Recipe</h2>
-      <h3>{props.name}</h3>
+      {!data && <p>Loading...</p>}
+      {data && (
+        <div>
+          <img src={data.imageURL} alt={data.name} />
+          <h3>{data.name}</h3>
+          <p>{data.instructions}</p>
+          <p>{data.description}</p>
+        </div>
+      )}
+
       {props.id}
     </div>
   );
