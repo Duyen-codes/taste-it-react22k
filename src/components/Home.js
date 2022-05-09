@@ -39,7 +39,7 @@ const Home = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
               amet.
             </p>
-            <Link to="">Business College Helsinki</Link>
+            <a href="">Business College helsinki</a>
           </div>
         </div>
       </div>
