@@ -10,4 +10,31 @@
 
 html {
   font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 1.8rem;
+}
+/* Header  */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: lightgrey;
+  padding: 2rem 5rem;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+.header a {
+  color: black;
 }
