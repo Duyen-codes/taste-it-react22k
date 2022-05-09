@@ -32,9 +32,9 @@ const AddNewRecipe = (props) => {
         </div>
         <div>
           <p>Ingredients</p>
-          <label htmlFor="quantity"></label>
+          <label htmlFor="quantity">quantity</label>
           <input type="number" id="quantity" />
-          <label htmlFor="ingredient"></label>
+          <label htmlFor="ingredient">ingredient</label>
           <input type="text" id="ingredient" />
           <button>Add more</button>
         </div>

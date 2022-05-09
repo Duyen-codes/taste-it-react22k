@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Layout from "./components/pages/Layout";
 import Home from "./components/Home";
@@ -11,6 +11,22 @@ const RouterWrapper = (props) => {
   return <Recipe params={params} {...props} />;
 };
 const App = () => {
+  const [inputData, setInputData] = useState({
+    name: "",
+    author: "",
+    country: "",
+    description: "",
+    imageURL: "",
+    ingredients: {
+      quantity: "",
+      unit: "",
+      ingredient: "",
+    },
+    instructions: "",
+  });
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {}, []);
   return (
     <BrowserRouter>
       <Routes>
