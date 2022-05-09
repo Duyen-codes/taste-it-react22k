@@ -8,10 +8,11 @@ import RecipeSingle from "./components/RecipeSingle";
 import axios from "axios";
 
 const RouterWrapper = (props) => {
-  const params = useParams();
-  return <RecipeSingle params={params} {...props} />;
+  const { id } = useParams();
+  return <RecipeSingle id={id} {...props} />;
 };
-const App = () => {
+
+const App = (props) => {
   const [inputData, setInputData] = useState({
     name: "",
     author: "",
@@ -29,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     axios.get("http://localhost:3001/recipes").then((response) => {
-      console.log(response.data);
+      console.log("from App.js", response.data);
       setRecipes(response.data);
     });
   }, []);
@@ -39,7 +40,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="recipes" element={<RecipeList recipes={recipes} />} />
-          <Route path="recipes/:recipe" element={<RouterWrapper />} />
+          <Route path="recipes/:id" element={<RouterWrapper />} />
           <Route path="addRecipe" element={<AddNewRecipe />} />
         </Route>
       </Routes>

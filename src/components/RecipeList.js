@@ -16,6 +16,7 @@ const RecipeList = (props) => {
           {props.recipes.map((item) => (
             <RecipeCard
               key={item.id}
+              id={item.id}
               name={item.name}
               author={item.author}
               country={item.country}

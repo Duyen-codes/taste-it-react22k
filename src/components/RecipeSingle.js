@@ -1,29 +1,26 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useParams } from "react";
 
 const RecipeSingle = (props) => {
-  console.log(props);
+  console.log("from RecipeSingle", props);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`http://localhost:3000/recipes/${props.params.recipe}`)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      });
-  });
+    axios.get(`http://localhost:3001/recipes/${props.id}`).then((res) => {
+      console.log("from RecipeSingle", res.data);
+      setData(res.data);
+    });
+  }, []);
+  {
+    loading && <p>Loading...</p>;
+  }
   return (
     <div>
       <h2>Single Recipe</h2>
       <h3>{props.name}</h3>
-      <img src="" alt="" />
-      <p>Recipe description: {props.description}</p>
-      <p>Author: {props.author}</p>
-      <p>Ingredients</p>
-      <p>Preparation</p>
+      {props.id}
     </div>
   );
 };
