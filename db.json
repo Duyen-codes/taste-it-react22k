@@ -35,7 +35,7 @@
       "serving": 4,
       "ingredients": [
         {
-          "quanity": 300,
+          "quantity": 300,
           "unit": "grams",
           "ingredientName": "pasta"
         },
@@ -53,12 +53,12 @@
       "author": "Emily",
       "country": "German",
       "description": "amazing german sandwich",
-      "imageURL": "https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1608&q=80",
+      "imageURL": "https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80",
       "difficulty level": "hard",
       "serving": 6,
       "ingredients": [
         {
-          "quanity": 3,
+          "quantity": 3,
           "unit": "pieces",
           "ingredientName": "ham"
         },
@@ -68,7 +68,7 @@
           "ingredientName": "majoneese"
         }
       ],
-      "instructions": "instructions how to prepare german sanwich"
+      "instructions": "instructions how to prepare german sandwich"
     }
   ]
 }
