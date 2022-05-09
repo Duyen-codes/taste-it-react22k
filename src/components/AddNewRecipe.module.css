@@ -1,0 +1,27 @@
+.AddNewRecipe .newRecipeForm {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  max-width: 50%;
+  margin-inline: auto;
+  padding: 2rem;
+}
+
+.newRecipeForm div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+}
+
+.AddNewRecipe input,
+textarea,
+select {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.AddNewRecipe button {
+  padding: 1rem 3rem;
+  background: rgb(116, 192, 116);
+}

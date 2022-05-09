@@ -33,7 +33,7 @@ const RecipeSingle = (props) => {
           <section className={styles["recipe-single-bottom"]}>
             <div>
               <h3>Ingredients</h3>
-              {data.ingredients?.map((item) => (
+              {data?.ingredients?.map((item) => (
                 <li key={item.ingredientName}>
                   {item.ingredientName} | {item.quantity}
                   {item.unit}

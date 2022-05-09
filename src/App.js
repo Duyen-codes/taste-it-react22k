@@ -16,13 +16,15 @@ const App = (props) => {
   const [inputData, setInputData] = useState({
     name: "",
     author: "",
-    country: "",
+    origin: "",
     description: "",
     imageURL: "",
+    difficulty: "",
+    servings: "",
     ingredients: {
       quantity: "",
       unit: "",
-      ingredient: "",
+      ingredientName: "",
     },
     instructions: "",
   });
@@ -46,6 +48,23 @@ const App = (props) => {
     return recipe.name.toLowerCase().includes(search.toLowerCase());
   });
 
+  const handleChange = (e) => {
+    console.log("handle change");
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    console.log("handle submit clicked");
+    // axios
+    //   .post("http://localhost:3001/recipes", inputData)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -62,7 +81,16 @@ const App = (props) => {
             }
           />
           <Route path="recipes/:id" element={<RouterWrapper />} />
-          <Route path="addRecipe" element={<AddNewRecipe />} />
+          <Route
+            path="addRecipe"
+            element={
+              <AddNewRecipe
+                onChange={handleChange}
+                onSubmit={handleSubmit}
+                {...inputData}
+              />
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

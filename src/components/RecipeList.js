@@ -25,7 +25,7 @@ const RecipeList = (props) => {
               id={item.id}
               name={item.name}
               author={item.author}
-              country={item.country}
+              origin={item.origin}
               description={item.description}
               imageURL={item.imageURL}
               ingredients={item.ingredients}
