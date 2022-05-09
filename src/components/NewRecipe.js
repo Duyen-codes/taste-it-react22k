@@ -1,7 +1,11 @@
 import React from "react";
 
 const NewRecipe = () => {
-  return <div>Add new recipe</div>;
+  return (
+    <div>
+      <h2>Add new recipe</h2>
+    </div>
+  );
 };
 
 export default NewRecipe;
