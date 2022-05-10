@@ -14,15 +14,17 @@ const App = () => {
     origin: "",
     description: "",
     imageURL: "",
-    ingredients: [
-      {
-        quantity: "",
-        unit: "",
-        ingredientName: "",
-      },
-    ],
     instructions: "",
   });
+
+  const [ingredients, setIngredients] = useState([
+    {
+      quantity: "",
+      unit: "",
+      ingredientName: "",
+    },
+  ]);
+
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -54,15 +56,23 @@ const App = () => {
     return recipe.name.toLowerCase().includes(search.toLowerCase());
   });
 
-  const handleInputChange = (event, index, value) => {
-    setInputData((prevState) => {
-      const ingredients = prevState.ingredients.map((field, i) => {
-        if (i == index)
-          return { ...ingredients, [event.target.name]: event.target.value };
-      });
-      return { ...inputData, ingredients };
-    });
+  // Handle form input change
+  const handleInputChange = (event) => {
+    console.log("handle input change");
   };
+
+  // Handle ingredient change
+  const handleIngredientChange = (e) => {
+    console.log("handle ingredient change");
+  };
+
+  // handle add more ingredient fields
+
+  const handleAddMore = (e) => {
+    console.log("add more clicked");
+  };
+  //
+  // Handle post recipe
 
   const handleSubmit = (event) => {
     console.log("handle submit clicked");
@@ -98,8 +108,10 @@ const App = () => {
             element={
               <AddNewRecipe
                 onChange={handleInputChange}
+                onIngredientChange={handleIngredientChange}
                 onSubmit={handleSubmit}
                 {...inputData}
+                addMore={handleAddMore}
               />
             }
           />

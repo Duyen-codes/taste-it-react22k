@@ -3,18 +3,14 @@ import styles from "./AddNewRecipe.css";
 
 const AddNewRecipe = (props) => {
   console.log("AddNewRecipe props", props);
+
   return (
     <div className="AddNewRecipe">
       <h2>Add new recipe</h2>
       <form className={styles.newRecipeForm}>
         <div>
           <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            onChange={(e) => props.onChange(e.target.value)}
-          />
+          <input type="text" id="name" name="name" onChange={props.onChange} />
         </div>
         <div>
           <label htmlFor="author">Author</label>
@@ -22,16 +18,12 @@ const AddNewRecipe = (props) => {
             type="text"
             id="author"
             name="author"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onChange}
           />
         </div>
         <div>
           <label htmlFor="origin">Recipe is from:</label>
-          <select
-            name="origin"
-            id="origin"
-            onChange={(e) => props.onChange(e.target.value)}
-          >
+          <select name="origin" id="origin" onChange={props.onChange}>
             <option value="">--Please choose an option--</option>
             <option value="finland">Finland</option>
             <option value="vietnam">Vietnam</option>
@@ -41,7 +33,7 @@ const AddNewRecipe = (props) => {
         <div>
           <label htmlFor="description">Description</label>
           <textarea
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onChange}
             name="description"
             id="description"
             cols="30"
@@ -54,7 +46,7 @@ const AddNewRecipe = (props) => {
             type="text"
             id="imageURL"
             name="imageURL"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onChange}
           />
         </div>
         <div>
@@ -64,28 +56,28 @@ const AddNewRecipe = (props) => {
             type="number"
             id="quantity"
             name="quantity"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onIngredientChange}
           />
           <label htmlFor="unit">Unit</label>
           <input
             type="text"
             id="unit"
             name="unit"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onIngredientChange}
           />
           <label htmlFor="ingredientName">ingredient</label>
           <input
             type="text"
             id="ingredientName"
             name="ingredientName"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onIngredientChange}
           />
-          <button>Add more</button>
+          <button onClick={props.addMore}>Add more</button>
         </div>
         <div>
           <label htmlFor="instructions">Instructions</label>
           <textarea
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={props.onChange}
             name="instructions"
             id="instructions"
             cols="30"
