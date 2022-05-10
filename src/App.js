@@ -34,10 +34,12 @@ const App = () => {
   // handle remove
 
   const handleRemove = (id) => {
-    console.log("handleremove", id);
-    console.log("handle remove");
-    axios.delete(`http://localhost:3000/recipes/${id}`).then((res) => {
-      const remainedRecipes = recipes.filter((recipe) => recipe.id !== id);
+    console.log("handle remove", id);
+    axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
+      const remainedRecipes = recipes.filter((recipe) => {
+        console.log(recipe.id);
+        return recipe.id !== id;
+      });
       setRecipes(remainedRecipes);
     });
   };
