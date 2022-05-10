@@ -34,9 +34,12 @@ const App = () => {
   // handle remove
 
   const handleRemove = (id) => {
+    console.log("handleremove", id);
     console.log("handle remove");
-    const remainedRecipes = recipes.filter((recipe) => recipe.id !== id);
-    setRecipes(remainedRecipes);
+    axios.delete(`http://localhost:3000/recipes/${id}`).then((res) => {
+      const remainedRecipes = recipes.filter((recipe) => recipe.id !== id);
+      setRecipes(remainedRecipes);
+    });
   };
 
   useEffect(() => {
