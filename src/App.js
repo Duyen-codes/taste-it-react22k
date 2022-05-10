@@ -43,6 +43,7 @@ const App = () => {
     });
   };
 
+  // fetch data from json server and render on page
   useEffect(() => {
     axios.get("http://localhost:3001/recipes").then((response) => {
       setRecipes(response.data);
