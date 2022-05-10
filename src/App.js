@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/pages/Layout";
 import Home from "./components/Home";
 import RecipeList from "./components/RecipeList";
 import AddNewRecipe from "./components/AddNewRecipe";
 import RecipeSingle from "./components/RecipeSingle";
 import axios from "axios";
-
-// const RouterWrapper = (props) => {
-//   const { id } = useParams();
-//   return <RecipeSingle id={id} {...props} />;
-// };
 
 const App = () => {
   const [inputData, setInputData] = useState({
