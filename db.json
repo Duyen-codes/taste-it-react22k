@@ -63,7 +63,6 @@
       ],
       "instructions": "instructions how to prepare german sandwich"
     },
-
     {
       "name": "meat ball",
       "author": "emy",
@@ -76,6 +75,18 @@
       "unit": "kpl",
       "ingredientName": "eggs",
       "id": 5
+    },
+    {
+      "name": "",
+      "author": "",
+      "origin": "",
+      "description": "",
+      "imageURL": "",
+      "ingredients": [
+        null
+      ],
+      "instructions": "",
+      "id": 6
     }
   ]
 }

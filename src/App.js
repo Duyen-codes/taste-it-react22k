@@ -28,13 +28,11 @@ const App = () => {
 
   // set search query to empty string
   const handleSearch = (e) => {
-    console.log("handleSearch:", e.target.value);
     setSearch(e.target.value);
   };
 
   useEffect(() => {
     axios.get("http://localhost:3001/recipes").then((response) => {
-      // console.log("from App.js", response.data);
       setRecipes(response.data);
     });
   }, []);
@@ -43,9 +41,14 @@ const App = () => {
     return recipe.name.toLowerCase().includes(search.toLowerCase());
   });
 
-  const handleInputChange = (e) => {
-    console.log("handle change");
-    setInputData({ ...inputData, [e.target.name]: e.target.value });
+  const handleInputChange = (event, index, value) => {
+    setInputData((prevState) => {
+      const ingredients = prevState.ingredients.map((field, i) => {
+        if (i == index)
+          return { ...ingredients, [event.target.name]: event.target.value };
+      });
+      return { ...inputData, ingredients };
+    });
   };
 
   const handleSubmit = (event) => {
