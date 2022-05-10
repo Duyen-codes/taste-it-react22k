@@ -7,8 +7,6 @@
       "origin": "Finland",
       "description": "awesome finnish pancake",
       "imageURL": "https://images.unsplash.com/flagged/photo-1557609786-fd36193db6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "difficulty": "easy",
-      "servings": 8,
       "ingredients": [
         {
           "quantity": 3,
@@ -51,7 +49,6 @@
       "origin": "German",
       "description": "amazing german sandwich",
       "imageURL": "https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80",
-
       "ingredients": [
         {
           "quantity": 3,
@@ -73,7 +70,6 @@
       "origin": "america",
       "description": "description ",
       "imageURL": "https://images.unsplash.com/flagged/photo-1552640761-7c24c575bcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2819&q=80",
-
       "ingredients": [],
       "instructions": "some insructions",
       "quantity": "3",

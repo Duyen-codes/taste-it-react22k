@@ -14,7 +14,13 @@ const App = () => {
     origin: "",
     description: "",
     imageURL: "",
-    ingredients: [],
+    ingredients: [
+      {
+        quantity: "",
+        unit: "",
+        ingredientName: "",
+      },
+    ],
     instructions: "",
   });
   const [recipes, setRecipes] = useState([]);
