@@ -6,10 +6,10 @@ const RecipeCard = (props) => {
   console.log("from recipeCard", props);
   return (
     <div className="recipe__card">
-      <button onClick={props.remove}>X</button>
+      <button onClick={() => props.remove(props.id)}>X</button>
       <p>{props.name}</p>
       <p>{props.description}</p>
-      <Link to={`/recipes/${props.id}`} state={{ ...props }}>
+      <Link to={`${props.id}`} state={{ ...props }}>
         See more
       </Link>
     </div>

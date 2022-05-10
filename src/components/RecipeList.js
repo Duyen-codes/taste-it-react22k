@@ -27,7 +27,7 @@ const RecipeList = (props) => {
               imageURL={item.imageURL}
               ingredients={item.ingredients}
               instructions={item.instructions}
-              remove={() => props.remove(item.id)}
+              // remove={props.remove}
             />
           ))}
         </ul>

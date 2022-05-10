@@ -4,8 +4,7 @@ import { useParams, useLocation } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
-  // const [state, setData] = useState([]);
-  let { id } = useParams();
+  // let { id } = useParams();
   const location = useLocation();
   const state = location.state;
   console.log("state", state);
