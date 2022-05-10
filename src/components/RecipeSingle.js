@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
   console.log("from RecipeSingle", props);
   const [data, setData] = useState([]);
+  let { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/recipes/${props.id}`).then((res) => {
+    axios.get(`http://localhost:3001/recipes/${id}`).then((res) => {
       console.log("from RecipeSingle res.data", res.data);
       console.log(
         "from reciplesingle, res.data.ingredients",

@@ -30,8 +30,6 @@
       "origin": "Italy",
       "description": "tasty italian pasta",
       "imageURL": "https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1608&q=80",
-      "difficulty": "medium",
-      "servings": 4,
       "ingredients": [
         {
           "quantity": 300,
@@ -53,8 +51,7 @@
       "origin": "German",
       "description": "amazing german sandwich",
       "imageURL": "https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80",
-      "difficulty": "hard",
-      "servings": 6,
+
       "ingredients": [
         {
           "quantity": 3,
@@ -69,33 +66,14 @@
       ],
       "instructions": "instructions how to prepare german sandwich"
     },
-    {
-      "name": "banh mi",
-      "author": "kevin",
-      "origin": "vietnam",
-      "description": "best sandwich in the world. Vietnamese traditional. Tasty and flavorful. ",
-      "imageURL": "https://images.unsplash.com/flagged/photo-1552640761-7c24c575bcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2819&q=80",
-      "difficulty": "",
-      "servings": "",
-      "ingredients": {
-        "quantity": "",
-        "unit": "",
-        "ingredientName": ""
-      },
-      "instructions": "Stuff all herbs and meat of your choice into the sandwich. Enjoy. ",
-      "quantity": "3",
-      "unit": "kpl",
-      "ingredientName": "egg",
-      "id": 4
-    },
+
     {
       "name": "meat ball",
       "author": "emy",
       "origin": "america",
       "description": "description ",
       "imageURL": "https://images.unsplash.com/flagged/photo-1552640761-7c24c575bcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2819&q=80",
-      "difficulty": "",
-      "servings": "",
+
       "ingredients": [],
       "instructions": "some insructions",
       "quantity": "3",

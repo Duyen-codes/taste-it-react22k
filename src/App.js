@@ -7,20 +7,18 @@ import AddNewRecipe from "./components/AddNewRecipe";
 import RecipeSingle from "./components/RecipeSingle";
 import axios from "axios";
 
-const RouterWrapper = (props) => {
-  const { id } = useParams();
-  return <RecipeSingle id={id} {...props} />;
-};
+// const RouterWrapper = (props) => {
+//   const { id } = useParams();
+//   return <RecipeSingle id={id} {...props} />;
+// };
 
-const App = (props) => {
+const App = () => {
   const [inputData, setInputData] = useState({
     name: "",
     author: "",
     origin: "",
     description: "",
     imageURL: "",
-    difficulty: "",
-    servings: "",
     ingredients: [],
     instructions: "",
   });
@@ -76,7 +74,7 @@ const App = (props) => {
               />
             }
           />
-          <Route path="recipes/:id" element={<RouterWrapper />} />
+          <Route path="recipes/:id" element={<RecipeSingle />} />
           <Route
             path="addRecipe"
             element={
