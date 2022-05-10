@@ -5,10 +5,8 @@ import styles from "./RecipeSingle.module.css";
 const RecipeSingle = (props) => {
   console.log("from RecipeSingle", props);
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     axios.get(`http://localhost:3001/recipes/${props.id}`).then((res) => {
       console.log("from RecipeSingle res.data", res.data);
       console.log(

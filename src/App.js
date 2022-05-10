@@ -21,11 +21,7 @@ const App = (props) => {
     imageURL: "",
     difficulty: "",
     servings: "",
-    ingredients: {
-      quantity: "",
-      unit: "",
-      ingredientName: "",
-    },
+    ingredients: [],
     instructions: "",
   });
   const [recipes, setRecipes] = useState([]);
@@ -55,14 +51,14 @@ const App = (props) => {
 
   const handleSubmit = (event) => {
     console.log("handle submit clicked");
-    // axios
-    //   .post("http://localhost:3001/recipes", inputData)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .post("http://localhost:3001/recipes", inputData)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
