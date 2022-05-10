@@ -97,12 +97,8 @@ h3 {
 }
 
 /* RecipeList  */
-.recipe-cards {
+.recipe__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-}
-
-.recipe-card {
-  border: 1px solid #ddd;
 }

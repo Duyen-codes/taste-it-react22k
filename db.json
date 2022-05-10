@@ -75,18 +75,6 @@
       "unit": "kpl",
       "ingredientName": "eggs",
       "id": 5
-    },
-    {
-      "name": "",
-      "author": "",
-      "origin": "",
-      "description": "",
-      "imageURL": "",
-      "ingredients": [
-        null
-      ],
-      "instructions": "",
-      "id": 6
     }
   ]
 }

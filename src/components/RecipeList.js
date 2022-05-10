@@ -18,7 +18,7 @@ const RecipeList = (props) => {
       <h3>Our recipes/ Recipe List</h3>
       {!props.recipes && <p>Loading...</p>}
       {props.recipes && (
-        <ul className="recipe-cards">
+        <ul className="recipe__cards">
           {props.recipes.map((item) => (
             <RecipeCard
               key={item.id}
@@ -30,6 +30,7 @@ const RecipeList = (props) => {
               imageURL={item.imageURL}
               ingredients={item.ingredients}
               instructions={item.instructions}
+              remove={() => props.remove(item.id)}
             />
           ))}
         </ul>

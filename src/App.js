@@ -31,6 +31,14 @@ const App = () => {
     setSearch(e.target.value);
   };
 
+  // handle remove
+
+  const handleRemove = (id) => {
+    console.log("handle remove");
+    const remainedRecipes = recipes.filter((recipe) => recipe.id !== id);
+    setRecipes(remainedRecipes);
+  };
+
   useEffect(() => {
     axios.get("http://localhost:3001/recipes").then((response) => {
       setRecipes(response.data);
@@ -74,6 +82,7 @@ const App = () => {
               <RecipeList
                 recipes={filteredRecipes}
                 onChange={handleSearch}
+                remove={handleRemove}
                 search={search}
               />
             }
