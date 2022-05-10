@@ -43,7 +43,7 @@ const App = () => {
     return recipe.name.toLowerCase().includes(search.toLowerCase());
   });
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     console.log("handle change");
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
@@ -80,7 +80,7 @@ const App = () => {
             path="addRecipe"
             element={
               <AddNewRecipe
-                onChange={handleChange}
+                onChange={handleInputChange}
                 onSubmit={handleSubmit}
                 {...inputData}
               />
