@@ -8,23 +8,6 @@ import RecipeSingle from "./components/RecipeSingle";
 import axios from "axios";
 
 const App = () => {
-  const [inputData, setInputData] = useState({
-    name: "",
-    author: "",
-    origin: "",
-    description: "",
-    imageURL: "",
-    instructions: "",
-  });
-
-  const [ingredients, setIngredients] = useState([
-    {
-      quantity: "",
-      unit: "",
-      ingredientName: "",
-    },
-  ]);
-
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -56,36 +39,6 @@ const App = () => {
     return recipe.name.toLowerCase().includes(search.toLowerCase());
   });
 
-  // Handle form input change
-  const handleInputChange = (event) => {
-    console.log("handle input change");
-  };
-
-  // Handle ingredient change
-  const handleIngredientChange = (e) => {
-    console.log("handle ingredient change");
-  };
-
-  // handle add more ingredient fields
-
-  const handleAddMore = (e) => {
-    console.log("add more clicked");
-  };
-  //
-  // Handle post recipe
-
-  const handleSubmit = (event) => {
-    console.log("handle submit clicked");
-    axios
-      .post("http://localhost:3001/recipes", inputData)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -103,18 +56,7 @@ const App = () => {
             }
           />
           <Route path="recipes/:id" element={<RecipeSingle />} />
-          <Route
-            path="addRecipe"
-            element={
-              <AddNewRecipe
-                onChange={handleInputChange}
-                onIngredientChange={handleIngredientChange}
-                onSubmit={handleSubmit}
-                {...inputData}
-                addMore={handleAddMore}
-              />
-            }
-          />
+          <Route path="addRecipe" element={<AddNewRecipe />} />
         </Route>
       </Routes>
     </BrowserRouter>

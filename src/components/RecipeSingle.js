@@ -12,7 +12,6 @@ const RecipeSingle = (props) => {
   return (
     <div className={styles["recipe-single"]}>
       <h3>{state.name}</h3>
-      {!state && <p>Loading...</p>}
       {state && (
         <div>
           <section className={styles["recipe-single-top"]}>
@@ -24,9 +23,9 @@ const RecipeSingle = (props) => {
             <div>
               <h3>Ingredients</h3>
               {state?.ingredients?.map((item) => (
-                <li key={item.ingredientName}>
-                  {item.ingredientName} | {item.quantity}
-                  {item.unit}
+                <li key={item?.ingredientName}>
+                  {item?.ingredientName} | {item?.quantity}
+                  {item?.unit}
                 </li>
               ))}
             </div>
