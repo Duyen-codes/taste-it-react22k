@@ -1,4 +1,14 @@
 .recipe__card {
   border: 1px solid #ddd;
   position: relative;
+  padding: 2rem;
+}
+
+.recipe__card > button {
+  position: absolute;
+  background: #a18f79;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  color: white;
 }

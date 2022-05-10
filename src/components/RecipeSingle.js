@@ -10,17 +10,6 @@ const RecipeSingle = (props) => {
   const state = location.state;
   console.log("state", state);
 
-  // useEffect(() => {
-  //   axios.get(`http://localhost:3001/recipes/${id}`).then((res) => {
-  //     console.log("from RecipeSingle res.data", res.data);
-  //     console.log(
-  //       "from reciplesingle, res.data.ingredients",
-  //       res.data.ingredients
-  //     );
-  //     setData(res.data);
-  //   });
-  // }, []);
-
   return (
     <div className={styles["recipe-single"]}>
       <h3>{state.name}</h3>

@@ -29,15 +29,6 @@ body {
   font-size: 1.8rem;
   line-height: 1.7;
 }
-/* Header  */
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: lightgrey;
-  padding: 2rem 5rem;
-}
 
 nav ul li {
   display: inline-block;
@@ -64,27 +55,6 @@ video {
   z-index: -1;
 }
 
-/* Home  */
-.home-top {
-  color: white;
-  padding: 0 5rem;
-}
-
-h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
-}
-
-h3 {
-  text-align: center;
-}
-
-.home-bottom {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 0 5rem 2rem;
-}
-
 .home-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -94,11 +64,4 @@ h3 {
 .home-cards > * {
   border: 1px solid #ddd;
   padding: 1rem;
-}
-
-/* RecipeList  */
-.recipe__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
 }

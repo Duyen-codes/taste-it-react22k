@@ -32,7 +32,6 @@ const App = () => {
   };
 
   // handle remove
-
   const handleRemove = (id) => {
     console.log("handle remove", id);
     axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {

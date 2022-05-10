@@ -1,8 +1,13 @@
-.AddNewRecipe .newRecipeForm {
+.AddNewRecipe {
+  text-align: center;
+}
+
+.AddNewRecipe > form {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   max-width: 50%;
   margin-inline: auto;
   padding: 2rem;
+  text-align: left;
 }
 
 .newRecipeForm div {
@@ -23,5 +28,6 @@ select {
 
 .AddNewRecipe button {
   padding: 1rem 3rem;
-  background: rgb(116, 192, 116);
+  background: #a18f79;
+  color: #fff;
 }

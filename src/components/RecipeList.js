@@ -1,21 +1,18 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
+import styles from "./RecipeList.css";
 
 const RecipeList = (props) => {
   console.log("RecipeList:", props);
   return (
-    <div>
-      <h2>Recipe list</h2>
-
-      <label htmlFor="search-recipe">Search for recipe:</label>
+    <div className="recipeList">
+      <h2>Recipes</h2>
       <input
         type="search"
         onChange={props.onChange}
         value={props.search}
         placeholder="Search recipe..."
       />
-
-      <h3>Our recipes/ Recipe List</h3>
       {!props.recipes && <p>Loading...</p>}
       {props.recipes && (
         <ul className="recipe__cards">

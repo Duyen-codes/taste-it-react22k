@@ -1,0 +1,30 @@
+/* Home  */
+.home__top {
+  color: white;
+  padding: 0 5rem;
+}
+
+.home h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.home h3 {
+  text-align: center;
+}
+
+.home button a {
+  padding: 1rem 3rem;
+  background: #a18f79;
+  color: #fff;
+}
+
+.home__bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 5rem 2rem;
+}
+
+.home__bottom a {
+  color: #a18f79;
+}

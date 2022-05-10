@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import backgroundVideo from "../assets/videoBg.mp4";
+import styles from "./Home.css";
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="home-top">
+      <div className="home__top">
         <h2>TasteIT</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <button>
@@ -13,7 +14,7 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="home-bottom">
+      <div className="home__bottom">
         <h3>Looking for the recipes?</h3>
         <div className="home-cards">
           <div>

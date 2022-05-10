@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./AddNewRecipe.module.css";
+import styles from "./AddNewRecipe.css";
 
 const AddNewRecipe = (props) => {
   console.log("AddNewRecipe props", props);
   return (
-    <div className={styles.AddNewRecipe}>
+    <div className="AddNewRecipe">
       <h2>Add new recipe</h2>
       <form className={styles.newRecipeForm}>
         <div>
