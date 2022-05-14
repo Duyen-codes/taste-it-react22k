@@ -22,20 +22,14 @@ const AddNewRecipe = (props) => {
     },
   ]);
 
-  // finalInput state
-
-  const [finalInputs, setFinalInputs] = useState({}); // should be an empty object to axios.post
-
   // Handle change for inputData
   const handleChange = (event) => {
-    console.log("input change");
     setInputData({ ...inputData, [event.target.name]: event.target.value });
   };
 
   // Handle ingredient name change
 
   const handleIngredientNameChange = (e, ingredientIndex) => {
-    console.log("ingredientName change", e, ingredientIndex);
     const newIngredientName = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
@@ -51,7 +45,6 @@ const AddNewRecipe = (props) => {
 
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
     const newIngredientQuantity = e.target.value;
-    console.log("quantity change:", newIngredientQuantity);
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
@@ -66,7 +59,6 @@ const AddNewRecipe = (props) => {
   // handle ingredient unit change
   const handleIngredientUnitChange = (e, ingredientIndex) => {
     const newIngredientUnit = e.target.value;
-    console.log("unit change", newIngredientUnit);
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
@@ -77,10 +69,13 @@ const AddNewRecipe = (props) => {
     );
   };
 
-  // Handle post recipe
-  const postFinalInputs = async (finalInputs) => {
-    const response = await axios
-      .post("http://localhost:3001/recipes", finalInputs)
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:3001/recipes", {
+        ...inputData,
+        ingredients: ingredients,
+      })
       .then((res) => {
         console.log(res);
       })
@@ -89,15 +84,8 @@ const AddNewRecipe = (props) => {
       });
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setFinalInputs({ ...inputData, ingredients: ingredients });
-    await postFinalInputs(finalInputs);
-  };
-
   // handle add more ingredient fields
   const handleAddMore = () => {
-    console.log("add more clicked");
     setIngredients([
       ...ingredients,
       { quantity: "", unit: "", ingredientName: "" },
