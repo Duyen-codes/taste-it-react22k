@@ -24,8 +24,8 @@ const AddNewRecipe = (props) => {
     },
   ]);
 
-  // Handle form input change
-  const handleInputChange = (event) => {
+  // Handle change for inputData
+  const handleChange = (event) => {
     console.log("handle input change");
     setInputData({ ...inputData, [event.target.name]: event.target.value });
   };
@@ -63,15 +63,10 @@ const AddNewRecipe = (props) => {
   return (
     <div className="AddNewRecipe">
       <h2>Add new recipe</h2>
-      <form className={styles.newRecipeForm}>
+      <form className={styles.newRecipeForm} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            onChange={handleInputChange}
-          />
+          <input type="text" id="name" name="name" onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="author">Author</label>
@@ -79,12 +74,12 @@ const AddNewRecipe = (props) => {
             type="text"
             id="author"
             name="author"
-            onChange={handleInputChange}
+            onChange={handleChange}
           />
         </div>
         <div>
           <label htmlFor="origin">Recipe is from:</label>
-          <select name="origin" id="origin" onChange={handleInputChange}>
+          <select name="origin" id="origin" onChange={handleChange}>
             <option value="">--Please choose an option--</option>
             <option value="finland">Finland</option>
             <option value="vietnam">Vietnam</option>
@@ -94,7 +89,7 @@ const AddNewRecipe = (props) => {
         <div>
           <label htmlFor="description">Description</label>
           <textarea
-            onChange={handleInputChange}
+            onChange={handleChange}
             name="description"
             id="description"
             cols="30"
@@ -107,7 +102,7 @@ const AddNewRecipe = (props) => {
             type="text"
             id="imageURL"
             name="imageURL"
-            onChange={handleInputChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -140,7 +135,7 @@ const AddNewRecipe = (props) => {
         <div>
           <label htmlFor="instructions">Instructions</label>
           <textarea
-            onChange={handleInputChange}
+            onChange={handleChange}
             name="instructions"
             id="instructions"
             cols="30"
