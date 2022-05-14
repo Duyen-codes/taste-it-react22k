@@ -142,10 +142,11 @@ const AddNewRecipe = (props) => {
             onChange={handleChange}
             value={inputData.origin}
           >
-            {/* <option value="">--Please choose an option--</option>
-            <option value="finland">Finland</option>
-            <option value="vietnam">Vietnam</option>
-            <option value="america">America</option> */}
+            {countries.map((country, index) => (
+              <option key={index} value={country.name.common}>
+                {country.name.common}
+              </option>
+            ))}
           </select>
         </div>
         <div>
