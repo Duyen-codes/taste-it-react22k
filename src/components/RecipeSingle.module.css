@@ -1,13 +1,13 @@
-.recipe-single {
+.recipe__single {
   padding: 0 5rem;
 }
-.recipe-single-top {
+.recipe__single-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
 }
 
-.recipe-single-bottom {
+.recipe__single-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
