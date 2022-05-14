@@ -4,10 +4,9 @@ import { useParams, useLocation } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
-  // let { id } = useParams();
+  let { id } = useParams();
   const location = useLocation();
   const state = location.state;
-  // console.log("state", state);
 
   return (
     <div className={styles["recipe-single"]}>

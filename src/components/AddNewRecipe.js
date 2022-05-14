@@ -50,8 +50,8 @@ const AddNewRecipe = (props) => {
   // handle ingredient quantity change
 
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
-    console.log("quantity change");
     const newIngredientQuantity = e.target.value;
+    console.log("quantity change:", newIngredientQuantity);
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
@@ -65,8 +65,8 @@ const AddNewRecipe = (props) => {
 
   // handle ingredient unit change
   const handleIngredientUnitChange = (e, ingredientIndex) => {
-    console.log("unit change");
     const newIngredientUnit = e.target.value;
+    console.log("unit change", newIngredientUnit);
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
@@ -77,18 +77,8 @@ const AddNewRecipe = (props) => {
     );
   };
 
-  // handle add more ingredient fields
-  const handleAddMore = () => {
-    console.log("add more clicked");
-    setIngredients([
-      ...ingredients,
-      { quantity: "", unit: "", ingredientName: "" },
-    ]);
-  };
-
   // Handle post recipe
   const postFinalInputs = async (finalInputs) => {
-    console.log(finalInputs);
     const response = await axios
       .post("http://localhost:3001/recipes", finalInputs)
       .then((res) => {
@@ -102,8 +92,16 @@ const AddNewRecipe = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setFinalInputs({ ...inputData, ingredients: ingredients });
-    console.log("handle submit clicked");
     await postFinalInputs(finalInputs);
+  };
+
+  // handle add more ingredient fields
+  const handleAddMore = () => {
+    console.log("add more clicked");
+    setIngredients([
+      ...ingredients,
+      { quantity: "", unit: "", ingredientName: "" },
+    ]);
   };
 
   return (
@@ -199,7 +197,9 @@ const AddNewRecipe = (props) => {
             </div>
           ))
         }
-        <button onClick={handleAddMore}>Add more</button>
+        <button onClick={handleAddMore} type="button">
+          Add more
+        </button>
 
         <div>
           <label htmlFor="instructions">Instructions</label>

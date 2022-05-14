@@ -41,6 +41,28 @@
       ],
       "instructions": "instructions how to prepare cooking pasta",
       "id": 22
+    },
+
+    {
+      "name": "pancake",
+      "author": "kevin",
+      "origin": "america",
+      "description": "best american pancake",
+      "imageURL": "https://www.eatthis.com/wp-content/uploads/sites/4/2019/11/whole-grain-pancake-stack.jpg",
+      "instructions": "mix all ingredients and make pancake.",
+      "ingredients": [
+        {
+          "quantity": "350",
+          "unit": "grams",
+          "ingredientName": "flour"
+        },
+        {
+          "quantity": "2",
+          "unit": "kpl",
+          "ingredientName": "eggs"
+        }
+      ],
+      "id": 24
     }
   ]
 }
