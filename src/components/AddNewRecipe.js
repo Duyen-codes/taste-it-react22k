@@ -54,7 +54,8 @@ const AddNewRecipe = (props) => {
     const newIngredientQuantity = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
-        if (index == ingredientIndex) {
+        if (index === ingredientIndex) {
+          // 3 equal signs
           return { ...ingredient, quantity: newIngredientQuantity };
         }
         return ingredient;
@@ -68,26 +69,13 @@ const AddNewRecipe = (props) => {
     const newIngredientUnit = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
-        if (index == ingredientIndex) {
+        if (index === ingredientIndex) {
           return { ...ingredient, unit: newIngredientUnit };
         }
         return ingredient;
       })
     );
   };
-
-  // // handle add ingredient
-
-  // const addIngredientInputs = () => {
-  //   setIngredients([
-  //     ...ingredients,
-  //     {
-  //       ingredientName: "",
-  //       quantity: "",
-  //       unit: "",
-  //     },
-  //   ]);
-  // };
 
   // handle add more ingredient fields
   const handleAddMore = (e) => {
