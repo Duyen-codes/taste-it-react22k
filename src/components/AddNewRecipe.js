@@ -4,6 +4,14 @@ import axios from "axios";
 
 const AddNewRecipe = (props) => {
   const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://restcountries.com/v3.1/all").then((res) => {
+      console.log(res.data);
+      setCountries(res.data);
+    });
+  }, []);
+
   // form input state
   const [inputData, setInputData] = useState({
     name: "",
@@ -134,10 +142,10 @@ const AddNewRecipe = (props) => {
             onChange={handleChange}
             value={inputData.origin}
           >
-            <option value="">--Please choose an option--</option>
+            {/* <option value="">--Please choose an option--</option>
             <option value="finland">Finland</option>
             <option value="vietnam">Vietnam</option>
-            <option value="america">America</option>
+            <option value="america">America</option> */}
           </select>
         </div>
         <div>
