@@ -78,6 +78,32 @@
         }
       ],
       "id": 25
+    },
+    {
+      "name": "Bulgogi",
+      "author": "Bora ",
+      "origin": "america",
+      "description": "best fermented and traditional korean cabbage",
+      "imageURL": "https://www.lacademie.com/wp-content/uploads/2021/06/kimchi-korea-800x600.jpg",
+      "instructions": "wash cabbage, dry them, put salt and sugar, wait for a week. ",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "unit": "kg",
+          "ingredientName": "cabbage"
+        },
+        {
+          "quantity": "5",
+          "unit": "dl",
+          "ingredientName": "salt"
+        },
+        {
+          "quantity": "200",
+          "unit": "ml",
+          "ingredientName": "fish sauce"
+        }
+      ],
+      "id": 26
     }
   ]
 }

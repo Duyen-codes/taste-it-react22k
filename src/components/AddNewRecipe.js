@@ -61,7 +61,7 @@ const AddNewRecipe = (props) => {
     const newIngredientUnit = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
-        if (index === ingredientIndex) {
+        if (index == ingredientIndex) {
           return { ...ingredient, unit: newIngredientUnit };
         }
         return ingredient;
@@ -82,6 +82,15 @@ const AddNewRecipe = (props) => {
       .catch((error) => {
         console.log(error);
       });
+    setInputData({
+      name: "",
+      author: "",
+      origin: "",
+      description: "",
+      imageURL: "",
+      instructions: "",
+    });
+    setIngredients({ quantity: "", unit: "", ingredientName: "" });
   };
 
   // handle add more ingredient fields
@@ -103,7 +112,7 @@ const AddNewRecipe = (props) => {
             id="name"
             name="name"
             onChange={handleChange}
-            value={inputData.name}
+            value={inputData.name} // make input into controlled element
           />
         </div>
         <div>
