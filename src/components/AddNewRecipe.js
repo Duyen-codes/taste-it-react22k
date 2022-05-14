@@ -100,6 +100,7 @@ const AddNewRecipe = (props) => {
             id="quantity"
             name="quantity"
             onChange={handleIngredientQuantityChange}
+            value={ingredients.quantity}
           />
           <label htmlFor="unit">Unit</label>
           <input
@@ -107,6 +108,7 @@ const AddNewRecipe = (props) => {
             id="unit"
             name="unit"
             onChange={handleIngredientUnitChange}
+            value={ingredients.unit}
           />
           <label htmlFor="ingredientName">ingredient name</label>
           <input
@@ -114,6 +116,7 @@ const AddNewRecipe = (props) => {
             id="ingredientName"
             name="ingredientName"
             onChange={handleIngredientNameChange}
+            value={ingredients.ingredientName}
           />
         </div>
       );
@@ -155,7 +158,13 @@ const AddNewRecipe = (props) => {
       <form className={styles.newRecipeForm} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" onChange={handleChange} />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            onChange={handleChange}
+            value={inputData.name}
+          />
         </div>
         <div>
           <label htmlFor="author">Author</label>
@@ -164,11 +173,17 @@ const AddNewRecipe = (props) => {
             id="author"
             name="author"
             onChange={handleChange}
+            value={inputData.author}
           />
         </div>
         <div>
           <label htmlFor="origin">Recipe is from:</label>
-          <select name="origin" id="origin" onChange={handleChange}>
+          <select
+            name="origin"
+            id="origin"
+            onChange={handleChange}
+            value={inputData.origin}
+          >
             <option value="">--Please choose an option--</option>
             <option value="finland">Finland</option>
             <option value="vietnam">Vietnam</option>
@@ -178,6 +193,7 @@ const AddNewRecipe = (props) => {
         <div>
           <label htmlFor="description">Description</label>
           <textarea
+            value={inputData.description}
             onChange={handleChange}
             name="description"
             id="description"
@@ -192,6 +208,7 @@ const AddNewRecipe = (props) => {
             id="imageURL"
             name="imageURL"
             onChange={handleChange}
+            value={inputData.imageURL}
           />
         </div>
         <label>Ingredients</label>
@@ -201,6 +218,7 @@ const AddNewRecipe = (props) => {
         <div>
           <label htmlFor="instructions">Instructions</label>
           <textarea
+            value={inputData.instructions}
             onChange={handleChange}
             name="instructions"
             id="instructions"
