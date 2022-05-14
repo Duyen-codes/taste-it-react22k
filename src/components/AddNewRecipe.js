@@ -66,6 +66,21 @@ const AddNewRecipe = (props) => {
   };
 
   // handle ingredient unit change
+  const handleIngredientUnitChange = (e, ingredientIndex) => {
+    let newIngredientUnit = e.target.value;
+    setIngredients((prev) => {
+      return {
+        ...prev,
+        ingredients: prev.ingredients.map((ingredient, index) => {
+          if (index == ingredientIndex) {
+            return { ...ingredient, unit: newIngredientUnit };
+          }
+          return ingredient;
+        }),
+      };
+    });
+  };
+
   // handle add more ingredient fields
   const handleAddMore = (e) => {
     console.log("add more clicked");
