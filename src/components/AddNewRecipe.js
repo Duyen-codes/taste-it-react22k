@@ -49,17 +49,14 @@ const AddNewRecipe = (props) => {
 
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
     let newIngredientQuantity = e.target.value;
-    setIngredients((prev) => {
-      return {
-        ...prev,
-        ingredients: prev.ingredients.map((ingredient, index) => {
-          if (index == ingredientIndex) {
-            return { ...ingredient, quantity: newIngredientQuantity };
-          }
-          return ingredient;
-        }),
-      };
-    });
+    setIngredients(
+      ingredients.map((ingredient, index) => {
+        if (index == ingredientIndex) {
+          return { ...ingredient, quantity: newIngredientQuantity };
+        }
+        return ingredient;
+      })
+    );
   };
 
   // handle ingredient unit change
