@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./AddNewRecipe.css";
 import axios from "axios";
 
 const AddNewRecipe = (props) => {
+  const [countries, setCountries] = useState([]);
   // form input state
   const [inputData, setInputData] = useState({
     name: "",
