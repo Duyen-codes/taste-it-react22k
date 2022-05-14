@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./AddNewRecipe.css";
+import styles from "./AddNewRecipe.module.css";
 import axios from "axios";
 
 const AddNewRecipe = (props) => {
@@ -7,7 +7,6 @@ const AddNewRecipe = (props) => {
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((res) => {
-      console.log(res.data);
       setCountries(res.data);
     });
   }, []);
@@ -111,7 +110,7 @@ const AddNewRecipe = (props) => {
   };
 
   return (
-    <div className="AddNewRecipe">
+    <div className={styles.AddNewRecipe}>
       <h2>Add new recipe</h2>
       <form className={styles.newRecipeForm} onSubmit={handleSubmit}>
         <div>
