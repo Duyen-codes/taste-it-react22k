@@ -36,7 +36,7 @@ const AddNewRecipe = (props) => {
 
   const handleIngredientNameChange = (e, ingredientIndex) => {
     console.log("ingredientName change", e, ingredientIndex);
-    let newIngredientName = e.target.value;
+    const newIngredientName = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
@@ -51,7 +51,7 @@ const AddNewRecipe = (props) => {
 
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
     console.log("quantity change");
-    let newIngredientQuantity = e.target.value;
+    const newIngredientQuantity = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index == ingredientIndex) {
@@ -65,7 +65,7 @@ const AddNewRecipe = (props) => {
   // handle ingredient unit change
   const handleIngredientUnitChange = (e, ingredientIndex) => {
     console.log("unit change");
-    let newIngredientUnit = e.target.value;
+    const newIngredientUnit = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index == ingredientIndex) {
