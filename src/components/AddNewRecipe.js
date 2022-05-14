@@ -81,6 +81,20 @@ const AddNewRecipe = (props) => {
     });
   };
 
+  // handle add ingredient
+
+  const addIngredientInputs = () => {
+    setIngredients((prev) => {
+      return {
+        ...prev,
+        ingredients: [
+          ...prev.ingredients,
+          { ingredientName: "", quantity: "", unit: "" },
+        ],
+      };
+    });
+  };
+
   // handle add more ingredient fields
   const handleAddMore = (e) => {
     console.log("add more clicked");
