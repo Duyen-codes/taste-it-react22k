@@ -49,6 +49,23 @@ const AddNewRecipe = (props) => {
   };
 
   // handle ingredient quantity change
+
+  const handleIngredientQuantityChange = (e, ingredientIndex) => {
+    let newIngredientQuantity = e.target.value;
+    setIngredients((prev) => {
+      return {
+        ...prev,
+        ingredients: prev.ingredients.map((ingredient, index) => {
+          if (index == ingredientIndex) {
+            return { ...ingredient, quantity: newIngredientQuantity };
+          }
+          return ingredient;
+        }),
+      };
+    });
+  };
+
+  // handle ingredient unit change
   // handle add more ingredient fields
   const handleAddMore = (e) => {
     console.log("add more clicked");
