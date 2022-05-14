@@ -75,15 +75,14 @@ const AddNewRecipe = (props) => {
   // handle add ingredient
 
   const addIngredientInputs = () => {
-    setIngredients((prev) => {
-      return {
-        ...prev,
-        ingredients: [
-          ...prev.ingredients,
-          { ingredientName: "", quantity: "", unit: "" },
-        ],
-      };
-    });
+    setIngredients([
+      ...ingredients,
+      {
+        ingredientName: "",
+        quantity: "",
+        unit: "",
+      },
+    ]);
   };
 
   // render ingredients
