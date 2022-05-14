@@ -9,16 +9,16 @@ const RecipeSingle = (props) => {
   const state = location.state;
 
   return (
-    <div className={styles["recipe-single"]}>
+    <div className={styles["recipe__single"]}>
       <h3>{state.name}</h3>
       {state && (
         <div>
-          <section className={styles["recipe-single-top"]}>
+          <section className={styles["recipe__single-top"]}>
             <img src={state.imageURL} alt={state.name} />
             <p>{state.description}</p>
           </section>
 
-          <section className={styles["recipe-single-bottom"]}>
+          <section className={styles["recipe__single-bottom"]}>
             <div>
               <h3>Ingredients</h3>
               {state?.ingredients?.map((item) => (

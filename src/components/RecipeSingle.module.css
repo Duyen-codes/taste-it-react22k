@@ -1,6 +1,7 @@
 .recipe__single {
   padding: 0 5rem;
 }
+
 .recipe__single-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,6 +9,8 @@
 }
 
 .recipe__single-bottom {
+  padding: 1rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid #a18f79;
 }
