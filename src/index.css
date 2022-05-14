@@ -25,6 +25,10 @@ button {
   border: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 body {
   font-size: 1.8rem;
   line-height: 1.7;

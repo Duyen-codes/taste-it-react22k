@@ -1,14 +1,25 @@
 .recipe__card {
   border: 1px solid #ddd;
-  position: relative;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* to position x */
+}
+
+.recipe__card > img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 200px;
 }
 
 .recipe__card > button {
   position: absolute;
-  background: #a18f79;
+  background: transparent;
   top: 1rem;
   right: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   color: white;
+}
+
+.recipe__card > button:hover {
+  background: #c2ae94;
 }

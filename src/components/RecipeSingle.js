@@ -7,7 +7,7 @@ const RecipeSingle = (props) => {
   // let { id } = useParams();
   const location = useLocation();
   const state = location.state;
-  console.log("state", state);
+  // console.log("state", state);
 
   return (
     <div className={styles["recipe-single"]}>

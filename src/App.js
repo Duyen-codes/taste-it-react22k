@@ -35,7 +35,6 @@ const App = () => {
   }, []);
 
   // const filteredRecipes = recipes.filter((recipe) => {
-  //   console.log(recipe);
   //   return recipe.name.toLowerCase().includes(search.toLowerCase());
   // });
 
@@ -49,6 +48,7 @@ const App = () => {
             element={
               <RecipeList
                 // recipes={filteredRecipes}
+                recipes={recipes}
                 onChange={handleSearch}
                 remove={handleRemove}
                 search={search}

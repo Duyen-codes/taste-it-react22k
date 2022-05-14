@@ -78,7 +78,7 @@ const AddNewRecipe = (props) => {
   };
 
   // handle add more ingredient fields
-  const handleAddMore = (e) => {
+  const handleAddMore = () => {
     console.log("add more clicked");
     setIngredients([
       ...ingredients,
@@ -165,7 +165,7 @@ const AddNewRecipe = (props) => {
             value={inputData.imageURL}
           />
         </div>
-        <label>Ingredients</label>
+
         {
           // render ingredients
           ingredients.map((ingredient, index) => (
@@ -175,24 +175,26 @@ const AddNewRecipe = (props) => {
                 type="number"
                 id="quantity"
                 name="quantity"
-                onChange={handleIngredientQuantityChange}
-                value={ingredients.quantity}
+                onChange={(event) =>
+                  handleIngredientQuantityChange(event, index)
+                }
+                value={ingredients[index].quantity}
               />
               <label htmlFor="unit">Unit</label>
               <input
                 type="text"
                 id="unit"
                 name="unit"
-                onChange={handleIngredientUnitChange}
-                value={ingredients.unit}
+                onChange={(event) => handleIngredientUnitChange(event, index)}
+                value={ingredients[index].unit}
               />
               <label htmlFor="ingredientName">ingredient name</label>
               <input
                 type="text"
                 id="ingredientName"
                 name="ingredientName"
-                onChange={handleIngredientNameChange}
-                value={ingredients.ingredientName}
+                onChange={(event) => handleIngredientNameChange(event, index)}
+                value={ingredients[index].ingredientName}
               />
             </div>
           ))
