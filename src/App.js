@@ -10,6 +10,7 @@ import axios from "axios";
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
+
   // set search query to empty string
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -17,7 +18,6 @@ const App = () => {
 
   // handle remove
   const handleRemove = (id) => {
-    // console.log("handle remove", id);
     axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
       const remainedRecipes = recipes.filter((recipe) => {
         console.log(recipe.id);

@@ -1,11 +1,10 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
-import styles from "./RecipeList.css";
+import styles from "./RecipeList.module.css";
 
 const RecipeList = (props) => {
-  console.log("RecipeList:", props);
   return (
-    <div className="recipeList">
+    <div className={styles.recipeList}>
       <h2>Recipes</h2>
       <input
         type="search"
@@ -15,7 +14,7 @@ const RecipeList = (props) => {
       />
       {!props.recipes && <p>Loading...</p>}
       {props.recipes && (
-        <ul className="recipe__cards">
+        <ul className={styles.recipe__cards}>
           {props.recipes.map((item) => (
             <RecipeCard
               key={item.id}

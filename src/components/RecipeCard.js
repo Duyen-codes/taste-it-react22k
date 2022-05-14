@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./RecipeCard.css";
+import styles from "./RecipeCard.module.css";
 
 const RecipeCard = (props) => {
-  console.log("from recipeCard props", props);
-
   return (
-    <div className="recipe__card">
+    <div className={styles["recipe__card"]}>
       <button onClick={() => props.remove(props.id)}>X</button>
       <img src={props.imageURL} alt="" />
-      <div className="recipe__card-content">
+      <div className={styles["recipe__card-content"]}>
         <p>{props.name}</p>
         <p>{props.description}</p>
         <Link
