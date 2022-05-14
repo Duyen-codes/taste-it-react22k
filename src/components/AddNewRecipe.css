@@ -4,7 +4,7 @@
 
 .AddNewRecipe > form {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  max-width: 50%;
+  max-width: 600px; /* form does not stretch over 500px when viewport grows */
   margin-inline: auto;
   padding: 2rem;
   text-align: left;
