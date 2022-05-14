@@ -18,3 +18,28 @@ git checkout -b my-branch
 ```
 git checkout master
 ```
+
+- delete branch
+
+```
+git branch -d my-branch
+```
+
+- check branches
+
+```
+git branch
+```
+
+- add and commit at the same time for modified file
+
+```
+git commit -am 'edit index.html'
+```
+
+- undo gits
+  make some changes
+
+```
+git reset [file name]
+```

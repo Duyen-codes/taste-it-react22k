@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useParams } from "react";
 import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.css";
 
 const RecipeList = (props) => {
+  const { recipeId } = useParams();
   console.log("RecipeList:", props);
   return (
     <div className="recipeList">

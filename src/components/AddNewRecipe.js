@@ -33,7 +33,11 @@ const AddNewRecipe = (props) => {
   // Handle ingredient change
   const handleIngredientChange = (event) => {
     console.log("handle ingredient change");
-    setIngredients({ ...ingredients, [event.target.name]: event.target.value });
+    setIngredients([
+      ...ingredients,
+      { [event.target.name]: event.target.value },
+    ]);
+    console.log(ingredients);
   };
 
   // handle add more ingredient fields
@@ -47,17 +51,24 @@ const AddNewRecipe = (props) => {
   // Handle post recipe
 
   const handleSubmit = (event) => {
-    setInputData((inputData) => [...inputData, ingredients]);
-    console.log("handle submit clicked");
+    // setInputData({ ...inputData, ingredients: ingredients });
+    console.log("handle submit clicked", inputData, ingredients);
     event.preventDefault();
     axios
-      .post("http://localhost:3001/recipes", inputData)
+      .post("http://localhost:3001/recipes", {
+        ...inputData,
+        ingredients: ingredients,
+      })
       .then((res) => {
         console.log(res);
       })
       .catch((error) => {
         console.log(error);
       });
+    props.addRecipes({
+      ...inputData,
+      ingredients: ingredients,
+    });
   };
 
   return (
@@ -110,33 +121,35 @@ const AddNewRecipe = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
-        <div>
-          <label htmlFor="quantity">Quantity</label>
-          <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            onChange={handleIngredientChange}
-          />
-          <label htmlFor="unit">Unit</label>
-          <input
-            type="text"
-            id="unit"
-            name="unit"
-            onChange={handleIngredientChange}
-          />
-          <label htmlFor="ingredientName">ingredient</label>
-          <input
-            type="text"
-            id="ingredientName"
-            name="ingredientName"
-            onChange={handleIngredientChange}
-          />
-        </div>
-
+        z
+        {ingredients.map((item, index) => {
+          return (
+            <div key={index}>
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                onChange={handleIngredientChange}
+              />
+              <label htmlFor="unit">Unit</label>
+              <input
+                type="text"
+                id="unit"
+                name="unit"
+                onChange={handleIngredientChange}
+              />
+              <label htmlFor="ingredientName">ingredient</label>
+              <input
+                type="text"
+                id="ingredientName"
+                name="ingredientName"
+                onChange={handleIngredientChange}
+              />
+            </div>
+          );
+        })}
         <button onClick={handleAddMore}>Add more</button>
-
         <div>
           <label htmlFor="instructions">Instructions</label>
           <textarea

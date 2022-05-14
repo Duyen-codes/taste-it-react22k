@@ -30,9 +30,12 @@ const App = () => {
 
   // fetch data from json server and render on page
   useEffect(() => {
-    axios.get("http://localhost:3001/recipes").then((response) => {
-      setRecipes(response.data);
-    });
+    axios
+      .get("http://localhost:3001/recipes")
+      .then((response) => {
+        setRecipes(response.data);
+      })
+      .catch((error) => console.log("axios get error:", error));
   }, []);
 
   const filteredRecipes = recipes.filter((recipe) => {
@@ -55,8 +58,11 @@ const App = () => {
               />
             }
           />
-          <Route path="recipes/:id" element={<RecipeSingle />} />
-          <Route path="addRecipe" element={<AddNewRecipe />} />
+          <Route path="recipes/:recipeId" element={<RecipeSingle />} />
+          <Route
+            path="addRecipe"
+            element={<AddNewRecipe addRecipes={setRecipes} />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
