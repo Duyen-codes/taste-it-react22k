@@ -3,8 +3,6 @@ import styles from "./AddNewRecipe.css";
 import axios from "axios";
 
 const AddNewRecipe = (props) => {
-  console.log("AddNewRecipe props", props);
-
   // form input state
   const [inputData, setInputData] = useState({
     name: "",
@@ -24,20 +22,20 @@ const AddNewRecipe = (props) => {
     },
   ]);
 
-  // final
+  // finalInput state
 
-  const [finalInputs, setFinalInputs] = useState("");
+  const [finalInputs, setFinalInputs] = useState({}); // should be an empty object to axios.post
 
   // Handle change for inputData
   const handleChange = (event) => {
-    console.log("handle input change");
+    console.log("input change");
     setInputData({ ...inputData, [event.target.name]: event.target.value });
   };
 
   // Handle ingredient name change
 
   const handleIngredientNameChange = (e, ingredientIndex) => {
-    console.log("handleIngredientNameChange", e, ingredientIndex);
+    console.log("ingredientName change", e, ingredientIndex);
     let newIngredientName = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
@@ -52,6 +50,7 @@ const AddNewRecipe = (props) => {
   // handle ingredient quantity change
 
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
+    console.log("quantity change");
     let newIngredientQuantity = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
@@ -65,6 +64,7 @@ const AddNewRecipe = (props) => {
 
   // handle ingredient unit change
   const handleIngredientUnitChange = (e, ingredientIndex) => {
+    console.log("unit change");
     let newIngredientUnit = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
@@ -89,40 +89,6 @@ const AddNewRecipe = (props) => {
   //   ]);
   // };
 
-  // render ingredients
-  const renderIngredientInputs = () => {
-    return ingredients.map((ingredient, index) => {
-      return (
-        <div key={`ingredientName ${index}`}>
-          <label htmlFor="quantity">Quantity</label>
-          <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            onChange={handleIngredientQuantityChange}
-            value={ingredients.quantity}
-          />
-          <label htmlFor="unit">Unit</label>
-          <input
-            type="text"
-            id="unit"
-            name="unit"
-            onChange={handleIngredientUnitChange}
-            value={ingredients.unit}
-          />
-          <label htmlFor="ingredientName">ingredient name</label>
-          <input
-            type="text"
-            id="ingredientName"
-            name="ingredientName"
-            onChange={handleIngredientNameChange}
-            value={ingredients.ingredientName}
-          />
-        </div>
-      );
-    });
-  };
-
   // handle add more ingredient fields
   const handleAddMore = (e) => {
     console.log("add more clicked");
@@ -135,7 +101,7 @@ const AddNewRecipe = (props) => {
   // Handle post recipe
   const postFinalInputs = async (finalInputs) => {
     console.log(finalInputs);
-    axios
+    const response = await axios
       .post("http://localhost:3001/recipes", finalInputs)
       .then((res) => {
         console.log(res);
@@ -147,7 +113,7 @@ const AddNewRecipe = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setFinalInputs({ ...inputData, ingredients: ingredients });
     console.log("handle submit clicked");
     await postFinalInputs(finalInputs);
   };
@@ -212,7 +178,37 @@ const AddNewRecipe = (props) => {
           />
         </div>
         <label>Ingredients</label>
-        {renderIngredientInputs()}
+        {
+          // render ingredients
+          ingredients.map((ingredient, index) => (
+            <div key={`ingredientName ${index}`}>
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                onChange={handleIngredientQuantityChange}
+                value={ingredients.quantity}
+              />
+              <label htmlFor="unit">Unit</label>
+              <input
+                type="text"
+                id="unit"
+                name="unit"
+                onChange={handleIngredientUnitChange}
+                value={ingredients.unit}
+              />
+              <label htmlFor="ingredientName">ingredient name</label>
+              <input
+                type="text"
+                id="ingredientName"
+                name="ingredientName"
+                onChange={handleIngredientNameChange}
+                value={ingredients.ingredientName}
+              />
+            </div>
+          ))
+        }
         <button onClick={handleAddMore}>Add more</button>
 
         <div>

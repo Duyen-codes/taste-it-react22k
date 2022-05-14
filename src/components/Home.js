@@ -43,10 +43,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <video autoPlay loop muted>
+      {/* <video autoPlay loop muted>
         <source src={null ?? backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
     </div>
   );
 };
