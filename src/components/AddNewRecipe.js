@@ -30,12 +30,25 @@ const AddNewRecipe = (props) => {
     setInputData({ ...inputData, [event.target.name]: event.target.value });
   };
 
-  // Handle ingredient change
-  const handleIngredientChange = (event) => {
-    console.log("handle ingredient change");
-    setIngredients({ ...ingredients, [event.target.name]: event.target.value });
+  // Handle ingredient name change
+
+  const handleIngredientNameChange = (e, ingredientIndex) => {
+    console.log("handleIngredientNameChange", e, ingredientIndex);
+    let newIngredientName = e.target.value;
+    setIngredients((prev) => {
+      return {
+        ...prev,
+        ingredients: prev.ingredients.map((ingredient, index) => {
+          if (index == ingredientIndex) {
+            return { ...ingredient, ingredientName: newIngredientName };
+          }
+          return ingredient;
+        }),
+      };
+    });
   };
 
+  // handle ingredient quantity change
   // handle add more ingredient fields
   const handleAddMore = (e) => {
     console.log("add more clicked");
@@ -112,21 +125,21 @@ const AddNewRecipe = (props) => {
             type="number"
             id="quantity"
             name="quantity"
-            onChange={handleIngredientChange}
+            onChange={handleIngredientQuantityChange}
           />
           <label htmlFor="unit">Unit</label>
           <input
             type="text"
             id="unit"
             name="unit"
-            onChange={handleIngredientChange}
+            onChange={handleIngredientUnitChange}
           />
           <label htmlFor="ingredientName">ingredient</label>
           <input
             type="text"
             id="ingredientName"
             name="ingredientName"
-            onChange={handleIngredientChange}
+            onChange={handleIngredientNameChange}
           />
         </div>
 
