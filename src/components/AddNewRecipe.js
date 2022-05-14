@@ -24,6 +24,10 @@ const AddNewRecipe = (props) => {
     },
   ]);
 
+  // final
+
+  const [finalInputs, setFinalInputs] = useState("");
+
   // Handle change for inputData
   const handleChange = (event) => {
     console.log("handle input change");
@@ -72,18 +76,18 @@ const AddNewRecipe = (props) => {
     );
   };
 
-  // handle add ingredient
+  // // handle add ingredient
 
-  const addIngredientInputs = () => {
-    setIngredients([
-      ...ingredients,
-      {
-        ingredientName: "",
-        quantity: "",
-        unit: "",
-      },
-    ]);
-  };
+  // const addIngredientInputs = () => {
+  //   setIngredients([
+  //     ...ingredients,
+  //     {
+  //       ingredientName: "",
+  //       quantity: "",
+  //       unit: "",
+  //     },
+  //   ]);
+  // };
 
   // render ingredients
   const renderIngredientInputs = () => {
@@ -124,20 +128,25 @@ const AddNewRecipe = (props) => {
       { quantity: "", unit: "", ingredientName: "" },
     ]);
   };
-  // Handle post recipe
 
-  const handleSubmit = (event) => {
-    setInputData((inputData) => [...inputData, ingredients]);
-    console.log("handle submit clicked");
-    event.preventDefault();
+  // Handle post recipe
+  const postFinalInputs = async (finalInputs) => {
+    console.log(finalInputs);
     axios
-      .post("http://localhost:3001/recipes", inputData)
+      .post("http://localhost:3001/recipes", finalInputs)
       .then((res) => {
         console.log(res);
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log("handle submit clicked");
+    await postFinalInputs(finalInputs);
   };
 
   return (
