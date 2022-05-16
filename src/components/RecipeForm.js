@@ -142,7 +142,7 @@ const AddNewRecipe = (props) => {
             value={inputData.origin}
           >
             {countries.map((country, index) => (
-              <option key={index} value={country.name.common}>
+              <option key={index} value={country.alpha2Code}>
                 {country.name.common}
               </option>
             ))}
@@ -172,7 +172,7 @@ const AddNewRecipe = (props) => {
 
         {
           // render ingredients
-          ingredients.map((ingredient, index) => (
+          ingredients.map((_, index) => (
             <div key={`ingredientName ${index}`}>
               <label htmlFor="quantity">Quantity</label>
               <input

@@ -3,7 +3,7 @@
     {
       "name": "banh mi",
       "author": "Duyen",
-      "origin": "Vietnam",
+      "origin": "VN",
       "description": "best sandwich",
       "imageURL": "https://www.bakersroyale.com/wp-content/uploads/2018/04/Banh-Mi-_-Bakers-Royale-735x1103.jpg",
       "ingredients": [
@@ -24,7 +24,7 @@
     {
       "name": "pho",
       "author": "Duyen",
-      "origin": "Vietnam",
+      "origin": "VN",
       "description": "best pho",
       "imageURL": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2020/09/pho-6443w.jpg",
       "ingredients": [
@@ -45,7 +45,7 @@
     {
       "name": "pancake",
       "author": "kevin",
-      "origin": "america",
+      "origin": "GB",
       "description": "best american pancake",
       "imageURL": "https://www.eatthis.com/wp-content/uploads/sites/4/2019/11/whole-grain-pancake-stack.jpg",
       "instructions": "mix all ingredients and make pancake.",
@@ -66,7 +66,7 @@
     {
       "name": "hambuger",
       "author": "Lily",
-      "origin": "america",
+      "origin": "US",
       "description": "best beef burger",
       "imageURL": "https://insanelygoodrecipes.com/wp-content/uploads/2020/10/Hamburger-with-Sesame-Seeds-Cheese-and-Veggies.png",
       "instructions": "grill the beef steak and put into the burger breads",
@@ -82,7 +82,7 @@
     {
       "name": "Bulgogi",
       "author": "Bora ",
-      "origin": "america",
+      "origin": "KR",
       "description": "best fermented and traditional korean cabbage",
       "imageURL": "https://www.lacademie.com/wp-content/uploads/2021/06/kimchi-korea-800x600.jpg",
       "instructions": "wash cabbage, dry them, put salt and sugar, wait for a week. ",

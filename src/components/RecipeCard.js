@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
 
 const RecipeCard = (props) => {
+  console.log("RecipeCard: ", props);
   return (
     <div className={styles["recipe__card"]}>
       <button onClick={() => props.remove(props.id)}>X</button>

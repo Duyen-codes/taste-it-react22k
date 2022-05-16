@@ -68,7 +68,7 @@ const RecipeList = (props) => {
             key={recipe.id}
             id={recipe.id}
             country={countries.find(
-              (country) => country.name === recipe.origin
+              (country) => country.alpha2Code === recipe.origin
             )}
             {...recipe}
           />
