@@ -40,6 +40,7 @@ const RecipeList = (props) => {
       // results is an array of 2 promise objects
       const recipesData = results[0].data;
       const countriesData = results[1].data;
+      console.log(countriesData);
       setRecipes(recipesData);
       setCountries(countriesData);
       setLoading(false);
@@ -62,18 +63,14 @@ const RecipeList = (props) => {
         placeholder="Search recipe..."
       />
       <ul className={styles.recipe__cards}>
-        {recipes.map((item) => (
+        {recipes.map((recipe) => (
           <RecipeCard
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            author={item.author}
-            origin={item.origin}
-            description={item.description}
-            imageURL={item.imageURL}
-            ingredients={item.ingredients}
-            instructions={item.instructions}
-            remove={props.remove}
+            key={recipe.id}
+            id={recipe.id}
+            country={countries.find(
+              (country) => country.name === recipe.origin
+            )}
+            {...recipe}
           />
         ))}
       </ul>
