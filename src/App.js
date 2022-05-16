@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/pages/Layout";
 import Home from "./components/Home";
 import RecipeList from "./components/RecipeList";
 import AddNewRecipe from "./components/AddNewRecipe";
 import RecipeSingle from "./components/RecipeSingle";
+import Header from "./components/Header";
 import axios from "axios";
 
 const App = () => {
@@ -40,24 +40,23 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route
-            path="recipes"
-            element={
-              <RecipeList
-                // recipes={filteredRecipes}
-                recipes={recipes}
-                onChange={handleSearch}
-                remove={handleRemove}
-                search={search}
-              />
-            }
-          />
-          <Route path="recipes/:id" element={<RecipeSingle />} />
-          <Route path="addRecipe" element={<AddNewRecipe />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="recipes"
+          element={
+            <RecipeList
+              // recipes={filteredRecipes}
+              recipes={recipes}
+              onChange={handleSearch}
+              remove={handleRemove}
+              search={search}
+            />
+          }
+        />
+        <Route path="recipes/:id" element={<RecipeSingle />} />
+        <Route path="addRecipe" element={<AddNewRecipe />} />
       </Routes>
     </BrowserRouter>
   );
