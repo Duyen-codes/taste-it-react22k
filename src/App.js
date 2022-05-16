@@ -20,7 +20,6 @@ const App = () => {
   const handleRemove = (id) => {
     axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
       const remainedRecipes = recipes.filter((recipe) => {
-        console.log(recipe.id);
         return recipe.id !== id;
       });
       setRecipes(remainedRecipes);
@@ -47,7 +46,6 @@ const App = () => {
           path="recipes"
           element={
             <RecipeList
-              // recipes={filteredRecipes}
               recipes={recipes}
               onChange={handleSearch}
               remove={handleRemove}
