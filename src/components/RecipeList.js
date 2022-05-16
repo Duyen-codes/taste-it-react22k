@@ -67,6 +67,7 @@ const RecipeList = (props) => {
           <RecipeCard
             key={recipe.id}
             id={recipe.id}
+            recipe={recipe}
             country={countries.find(
               (country) => country.alpha2Code === recipe.origin
             )}

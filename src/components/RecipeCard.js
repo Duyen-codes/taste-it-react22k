@@ -2,25 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
 
-const RecipeCard = (props) => {
-  console.log("RecipeCard: ", props);
+const RecipeCard = ({
+  name,
+  description,
+  imageURL,
+  ingredients,
+  instructions,
+  country,
+  recipe,
+  remove,
+  id,
+}) => {
   return (
     <div className={styles["recipe__card"]}>
-      <button onClick={() => props.remove(props.id)}>X</button>
-      <img src={props.imageURL} alt="" />
+      <button onClick={() => remove(id)}>X</button>
+      <img src={imageURL} alt="" />
       <div className={styles["recipe__card-content"]}>
-        <p>{props.name}</p>
-        <p>{props.description}</p>
+        <p>{name}</p>
+        <p>{description}</p>
         <Link
-          to={`${props.id}`}
+          to={`${id}`}
           state={{
-            name: props.name,
-            author: props.author,
-            origin: props.origin,
-            description: props.description,
-            imageURL: props.imageURL,
-            ingredients: props.ingredients,
-            instructions: props.instructions,
+            recipe: recipe,
+            country: country,
           }}
         >
           See more
