@@ -24,11 +24,14 @@ const RecipeList = (props) => {
   };
 
   // fetch data from json server and render on page
-  useEffect(() => {
-    axios.get("http://localhost:3001/recipes").then((response) => {
-      setRecipes(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("http://localhost:3001/recipes").then((response) => {
+  //     setRecipes(response.data);
+  //   });
+  // }, []);
+
+  const fetchRecipes = axios.get("http://localhost:3001/recipes");
+  const fetchCountries = axios.get("https://restcountries.com/v2/all");
 
   // const filteredRecipes = recipes.filter((recipe) => {
   //   return recipe.name.toLowerCase().includes(search.toLowerCase());
