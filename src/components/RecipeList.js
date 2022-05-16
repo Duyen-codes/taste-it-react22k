@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.module.css";
+import axios from "axios";
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([]);
@@ -30,9 +31,15 @@ const RecipeList = (props) => {
   //   });
   // }, []);
 
-  const fetchRecipes = axios.get("http://localhost:3001/recipes");
-  const fetchCountries = axios.get("https://restcountries.com/v2/all");
+  const fetchRecipes = () => axios.get("http://localhost:3001/recipes");
+  const fetchCountries = () => axios.get("https://restcountries.com/v2/all");
 
+  useEffect(() => {
+    setLoading(true);
+    Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
+      console.log(results);
+    });
+  }, []);
   // const filteredRecipes = recipes.filter((recipe) => {
   //   return recipe.name.toLowerCase().includes(search.toLowerCase());
   // });
