@@ -37,13 +37,21 @@ const RecipeList = (props) => {
   useEffect(() => {
     setLoading(true);
     Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
-      console.log(results);
+      // results is an array of 2 promise objects
+      const recipesData = results[0];
+      const countriesData = results[1];
+      setRecipes(recipesData);
+      setCountries(countriesData);
+      setLoading(false);
     });
   }, []);
   // const filteredRecipes = recipes.filter((recipe) => {
   //   return recipe.name.toLowerCase().includes(search.toLowerCase());
   // });
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className={styles.recipeList}>
       <h2>Recipes</h2>
@@ -53,25 +61,23 @@ const RecipeList = (props) => {
         value={props.search}
         placeholder="Search recipe..."
       />
-      {!props.recipes && <p>Loading...</p>}
-      {props.recipes && (
-        <ul className={styles.recipe__cards}>
-          {props.recipes.map((item) => (
-            <RecipeCard
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              author={item.author}
-              origin={item.origin}
-              description={item.description}
-              imageURL={item.imageURL}
-              ingredients={item.ingredients}
-              instructions={item.instructions}
-              remove={props.remove}
-            />
-          ))}
-        </ul>
-      )}
+
+      <ul className={styles.recipe__cards}>
+        {props.recipes.map((item) => (
+          <RecipeCard
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            author={item.author}
+            origin={item.origin}
+            description={item.description}
+            imageURL={item.imageURL}
+            ingredients={item.ingredients}
+            instructions={item.instructions}
+            remove={props.remove}
+          />
+        ))}
+      </ul>
     </div>
   );
 };
