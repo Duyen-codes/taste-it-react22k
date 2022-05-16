@@ -4,6 +4,7 @@ import styles from "./RecipeList.module.css";
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([]);
+  const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
 
   // set search query to empty string
