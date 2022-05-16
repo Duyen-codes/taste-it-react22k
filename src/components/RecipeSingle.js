@@ -6,36 +6,37 @@ import styles from "./RecipeSingle.module.css";
 const RecipeSingle = (props) => {
   let { id } = useParams();
   const location = useLocation();
-  const state = location.state;
+  const recipe = location.state.recipe;
+  const { country } = location.state;
+  console.log("RecipeSingle country: ", country);
 
   return (
     <div className={styles["recipe__single"]}>
-      <h3>{state.name}</h3>
-      {state && (
-        <div>
-          <section className={styles["recipe__single-top"]}>
-            <img src={state.imageURL} alt={state.name} />
-            <p>{state.description}</p>
-          </section>
+      <h3>{recipe.name}</h3>
 
-          <section className={styles["recipe__single-bottom"]}>
-            <div>
-              <h3>Ingredients</h3>
-              {state?.ingredients?.map((item) => (
-                <li key={item?.ingredientName}>
-                  {item?.ingredientName} | {item?.quantity}
-                  {item?.unit}
-                </li>
-              ))}
-            </div>
-            <div>
-              <h3>Instructions</h3>
-              <p>{state.instructions}</p>
-              <p>{state.description}</p>
-            </div>
-          </section>
-        </div>
-      )}
+      <div>
+        <section className={styles["recipe__single-top"]}>
+          <img src={recipe.imageURL} alt={recipe.name} />
+          <p>{recipe.description}</p>
+        </section>
+
+        <section className={styles["recipe__single-bottom"]}>
+          <div>
+            <h3>Ingredients</h3>
+            {recipe?.ingredients?.map((item) => (
+              <li key={item?.ingredientName}>
+                {item?.ingredientName} | {item?.quantity}
+                {item?.unit}
+              </li>
+            ))}
+          </div>
+          <div>
+            <h3>Instructions</h3>
+            <p>{recipe.instructions}</p>
+            <p>{recipe.description}</p>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
