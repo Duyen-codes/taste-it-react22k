@@ -38,8 +38,8 @@ const RecipeList = (props) => {
     setLoading(true);
     Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
       // results is an array of 2 promise objects
-      const recipesData = results[0];
-      const countriesData = results[1];
+      const recipesData = results[0].data;
+      const countriesData = results[1].data;
       setRecipes(recipesData);
       setCountries(countriesData);
       setLoading(false);
@@ -61,9 +61,8 @@ const RecipeList = (props) => {
         value={props.search}
         placeholder="Search recipe..."
       />
-
       <ul className={styles.recipe__cards}>
-        {props.recipes.map((item) => (
+        {recipes.map((item) => (
           <RecipeCard
             key={item.id}
             id={item.id}
