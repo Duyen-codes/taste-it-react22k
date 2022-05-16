@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./AddNewRecipe.module.css";
+import styles from "./RecipeForm.module.css";
 import axios from "axios";
 
 const AddNewRecipe = (props) => {

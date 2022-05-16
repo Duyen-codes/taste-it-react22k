@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import RecipeList from "./components/RecipeList";
-import AddNewRecipe from "./components/AddNewRecipe";
+import RecipeForm from "./components/RecipeForm";
 import RecipeSingle from "./components/RecipeSingle";
 import Header from "./components/Header";
 import axios from "axios";
@@ -56,7 +56,7 @@ const App = () => {
           }
         />
         <Route path="recipes/:id" element={<RecipeSingle />} />
-        <Route path="addRecipe" element={<AddNewRecipe />} />
+        <Route path="addRecipe" element={<RecipeForm />} />
       </Routes>
     </BrowserRouter>
   );
