@@ -3,6 +3,35 @@ import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.module.css";
 
 const RecipeList = (props) => {
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+
+  // set search query to empty string
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  // handle remove
+  const handleRemove = (id) => {
+    axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
+      const remainedRecipes = recipes.filter((recipe) => {
+        return recipe.id !== id;
+      });
+      setRecipes(remainedRecipes);
+    });
+  };
+
+  // fetch data from json server and render on page
+  useEffect(() => {
+    axios.get("http://localhost:3001/recipes").then((response) => {
+      setRecipes(response.data);
+    });
+  }, []);
+
+  // const filteredRecipes = recipes.filter((recipe) => {
+  //   return recipe.name.toLowerCase().includes(search.toLowerCase());
+  // });
+
   return (
     <div className={styles.recipeList}>
       <h2>Recipes</h2>
