@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
@@ -8,15 +8,17 @@ const RecipeSingle = (props) => {
   const location = useLocation();
   const recipe = location.state.recipe;
   const { country } = location.state;
-  console.log("RecipeSingle country: ", country);
 
   return (
     <div className={styles["recipe__single"]}>
+      <Link to="/recipes">Go back</Link>
       <h3>{recipe.name}</h3>
 
       <div>
         <section className={styles["recipe__single-top"]}>
           <img src={recipe.imageURL} alt={recipe.name} />
+          <img src={country.flag} alt={country.name} />
+
           <p>{recipe.description}</p>
         </section>
 

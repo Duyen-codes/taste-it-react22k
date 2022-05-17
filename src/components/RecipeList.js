@@ -11,6 +11,10 @@ const RecipeList = (props) => {
 
   // set search query to empty string
   const handleSearch = (e) => {
+    console.log("changed");
+    const filteredRecipes = recipes.filter((recipe) => {
+      return recipe.name.toLowerCase().includes(search.toLowerCase());
+    });
     setSearch(e.target.value);
   };
 
@@ -40,15 +44,11 @@ const RecipeList = (props) => {
       // results is an array of 2 promise objects
       const recipesData = results[0].data;
       const countriesData = results[1].data;
-      console.log(countriesData);
       setRecipes(recipesData);
       setCountries(countriesData);
       setLoading(false);
     });
   }, []);
-  // const filteredRecipes = recipes.filter((recipe) => {
-  //   return recipe.name.toLowerCase().includes(search.toLowerCase());
-  // });
 
   if (loading) {
     return <p>Loading...</p>;
@@ -58,8 +58,8 @@ const RecipeList = (props) => {
       <h2>Recipes</h2>
       <input
         type="search"
-        onChange={props.onChange}
-        value={props.search}
+        onChange={handleSearch}
+        value={search}
         placeholder="Search recipe..."
       />
       <ul className={styles.recipe__cards}>
