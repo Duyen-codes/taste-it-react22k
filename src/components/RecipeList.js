@@ -12,11 +12,13 @@ const RecipeList = (props) => {
   // set search query to empty string
   const handleSearch = (e) => {
     console.log("changed");
-    const filteredRecipes = recipes.filter((recipe) => {
-      return recipe.name.toLowerCase().includes(search.toLowerCase());
-    });
     setSearch(e.target.value);
+    setRecipes(filteredRecipes);
   };
+
+  const filteredRecipes = recipes.filter((recipe) => {
+    return recipe.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   // handle remove
   const handleRemove = (id) => {
@@ -27,13 +29,6 @@ const RecipeList = (props) => {
       setRecipes(remainedRecipes);
     });
   };
-
-  // fetch data from json server and render on page
-  // useEffect(() => {
-  //   axios.get("http://localhost:3001/recipes").then((response) => {
-  //     setRecipes(response.data);
-  //   });
-  // }, []);
 
   const fetchRecipes = () => axios.get("http://localhost:3001/recipes");
   const fetchCountries = () => axios.get("https://restcountries.com/v2/all");
