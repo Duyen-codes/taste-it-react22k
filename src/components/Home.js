@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import backgroundVideo from "../assets/videoBg.mp4";
+// import backgroundVideo from "../assets/videoBg.mp4";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -44,10 +44,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <video autoPlay loop muted>
-        <source src={null ?? backgroundVideo} type="video/mp4" />
+      <video autoPlay loop muted>
+        <source src="videoBg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video> */}
+      </video>
     </div>
   );
 };

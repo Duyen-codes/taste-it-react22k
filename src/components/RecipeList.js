@@ -9,16 +9,19 @@ const RecipeList = (props) => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
 
-  // set search query to empty string
+  // handle search
   const handleSearch = (e) => {
-    console.log("changed");
     setSearch(e.target.value);
-    setRecipes(filteredRecipes);
   };
 
-  const filteredRecipes = recipes.filter((recipe) => {
-    return recipe.name.toLowerCase().includes(search.toLowerCase());
-  });
+  const filteredRecipes = () => {
+    if (search === "") {
+      return recipes;
+    }
+    return recipes.filter((recipe) => {
+      return recipe.name.toLowerCase().includes(search.toLowerCase());
+    });
+  };
 
   // handle remove
   const handleRemove = (id) => {
@@ -58,7 +61,7 @@ const RecipeList = (props) => {
         placeholder="Search recipe..."
       />
       <ul className={styles.recipe__cards}>
-        {recipes.map((recipe) => (
+        {filteredRecipes().map((recipe) => (
           <RecipeCard
             key={recipe.id}
             id={recipe.id}
