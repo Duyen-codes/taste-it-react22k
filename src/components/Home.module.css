@@ -33,7 +33,10 @@
 
 .home__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* auto-fit makes card stretch and take up all spaces, auto-fill leaves empty space at the end */
   gap: 2rem;
 }
 

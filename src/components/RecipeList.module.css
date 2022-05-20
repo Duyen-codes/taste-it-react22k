@@ -16,7 +16,10 @@
 /* RecipeList  */
 .recipe__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* auto-fill keeps the card from stretching and taking up all available space */
   gap: 2rem;
   margin-top: 4rem;
 }
