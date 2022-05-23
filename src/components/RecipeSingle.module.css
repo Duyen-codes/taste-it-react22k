@@ -2,6 +2,10 @@
   padding: 0 5rem;
 }
 
+.recipe__single h2 {
+  font-size: 2.8rem;
+}
+
 .recipe__single-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,4 +17,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 1px solid #a18f79;
+}
+
+.recipe__subsection--ingredient {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 8px 0;
+  vertical-align: middle;
 }

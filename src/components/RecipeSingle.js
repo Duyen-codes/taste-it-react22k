@@ -24,16 +24,28 @@ const RecipeSingle = (props) => {
 
         <section className={styles["recipe__single-bottom"]}>
           <div>
-            <h3>Ingredients</h3>
-            {recipe?.ingredients?.map((item) => (
-              <li key={item?.ingredientName}>
-                {item?.ingredientName} | {item?.quantity}
-                {item?.unit}
-              </li>
-            ))}
+            <h2>
+              <span>Ingredients</span>
+            </h2>
+            <ul>
+              {recipe?.ingredients?.map((item) => (
+                <li
+                  key={item?.ingredientName}
+                  className={styles["recipe__subsection--ingredient"]}
+                >
+                  <span className={styles["recipe__ingredient--amount"]}>
+                    {item?.ingredientName}
+                  </span>
+                  <span>
+                    {item?.quantity}
+                    {item?.unit}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
-            <h3>Instructions</h3>
+            <h2>Instructions</h2>
             <p>{recipe.instructions}</p>
             <p>{recipe.description}</p>
           </div>
