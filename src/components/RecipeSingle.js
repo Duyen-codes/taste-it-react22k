@@ -10,11 +10,17 @@ const RecipeSingle = (props) => {
   return (
     <div className={styles["recipe__single"]}>
       <Link to="/recipes">Go back</Link>
-      <h3>{recipe.name}</h3>
+      <h2>{recipe.name}</h2>
       <div>
         <section className={styles["recipe__single-top"]}>
-          <img src={recipe.imageURL} alt={recipe.name} />
-          <img src={country.flag} alt={country.name} />
+          <div className={styles["image__wrapper"]}>
+            <img src={recipe.imageURL} alt={recipe.name} />
+            <img
+              className={styles["country__flag"]}
+              src={country.flag}
+              alt={country.name}
+            />
+          </div>
 
           <p>{recipe.description}</p>
         </section>

@@ -8,15 +8,27 @@
 
 .recipe__single-top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 5rem;
+}
+
+.recipe__single-top .image__wrapper {
+  position: relative;
+}
+
+.recipe__single-top .country__flag {
+  position: absolute;
+  right: 0;
+  top: -16px;
+  width: 100px;
+  height: 100px;
 }
 
 .recipe__single-bottom {
   padding: 1rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px dolid #a18f79;
+  grid-template-columns: 1fr;
+  border: 1px solid #a18f79;
   gap: 5rem;
 }
 
@@ -28,4 +40,20 @@
   padding: 8px 0;
   vertical-align: middle;
   justify-content: space-between;
+}
+
+@media screen and (min-width: 800px) {
+  .recipe__single-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+  }
+
+  .recipe__single-bottom {
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #a18f79;
+    gap: 5rem;
+  }
 }
