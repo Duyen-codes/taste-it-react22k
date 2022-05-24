@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import React from "react";
+import { useLocation, Link } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
 
 const RecipeSingle = (props) => {
-  let { id } = useParams();
   const location = useLocation();
   const recipe = location.state.recipe;
   const { country } = location.state;
@@ -12,7 +11,6 @@ const RecipeSingle = (props) => {
     <div className={styles["recipe__single"]}>
       <Link to="/recipes">Go back</Link>
       <h3>{recipe.name}</h3>
-
       <div>
         <section className={styles["recipe__single-top"]}>
           <img src={recipe.imageURL} alt={recipe.name} />

@@ -16,14 +16,16 @@
   padding: 1rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #a18f79;
+  border: 1px dolid #a18f79;
+  gap: 5rem;
 }
 
 .recipe__subsection--ingredient {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px dotted #e5e5e5;
   padding: 8px 0;
   vertical-align: middle;
+  justify-content: space-between;
 }
