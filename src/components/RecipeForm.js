@@ -112,6 +112,11 @@ const AddNewRecipe = (props) => {
   // handle remove ingredient
   const handleRemoveIngredient = () => {
     console.log("remove clicked");
+    if (ingredients.length > 1) {
+      const ingredientStore = [...ingredients];
+      ingredientStore.pop();
+      setIngredients(ingredientStore);
+    }
   };
 
   return (
