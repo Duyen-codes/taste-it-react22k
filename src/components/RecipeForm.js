@@ -69,7 +69,7 @@ const AddNewRecipe = (props) => {
     const newIngredientUnit = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
-        if (index == ingredientIndex) {
+        if (index === ingredientIndex) {
           return { ...ingredient, unit: newIngredientUnit };
         }
         return ingredient;

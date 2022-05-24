@@ -16,9 +16,9 @@ const RecipeCard = ({
   return (
     <div className={styles["recipe__card"]}>
       <button onClick={() => remove(id)}>X</button>
-      <img src={imageURL} alt="" />
+      <img src={imageURL} alt={name} />
       <div className={styles["recipe__card-content"]}>
-        <p>{name}</p>
+        <h2>{name}</h2>
         <p>{description}</p>
         <Link
           to={`${id}`}
