@@ -3,8 +3,10 @@ import styles from "./RecipeForm.module.css";
 import axios from "axios";
 
 const AddNewRecipe = (props) => {
+  // Countries state for saving data from RESTcountries API
   const [countries, setCountries] = useState([]);
 
+  /// fetch countries data
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((res) => {
       setCountries(res.data);
@@ -36,7 +38,6 @@ const AddNewRecipe = (props) => {
   };
 
   // Handle ingredient name change
-
   const handleIngredientNameChange = (e, ingredientIndex) => {
     const newIngredientName = e.target.value;
     setIngredients(
@@ -50,13 +51,12 @@ const AddNewRecipe = (props) => {
   };
 
   // handle ingredient quantity change
-
   const handleIngredientQuantityChange = (e, ingredientIndex) => {
     const newIngredientQuantity = e.target.value;
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
-          // 3 equal signs
+          // 3 equal signs, 2 will give warning
           return { ...ingredient, quantity: newIngredientQuantity };
         }
         return ingredient;
@@ -107,6 +107,11 @@ const AddNewRecipe = (props) => {
       ...ingredients,
       { quantity: "", unit: "", ingredientName: "" },
     ]);
+  };
+
+  // handle remove ingredient
+  const handleRemoveIngredient = () => {
+    console.log("remove clicked");
   };
 
   return (
@@ -205,6 +210,9 @@ const AddNewRecipe = (props) => {
         }
         <button onClick={handleAddMore} type="button">
           Add more
+        </button>
+        <button type="button" onClick={handleRemoveIngredient}>
+          Remove
         </button>
 
         <div>
