@@ -17,7 +17,11 @@ const RecipeCard = ({
     <div className={styles["recipe__card"]}>
       <button onClick={() => remove(id)}>X</button>
       <img src={imageURL} alt={name} />
-      <img src={country.flag} alt={country.name} />
+      <img
+        src={country.flag}
+        alt={country.name}
+        className={styles["country__flag"]}
+      />
       <div className={styles["recipe__card-content"]}>
         <h2>{name}</h2>
         <p>{description}</p>

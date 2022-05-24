@@ -3,6 +3,15 @@
   display: flex;
   flex-direction: column;
   position: relative; /* to position x */
+  padding-bottom: 2rem;
+}
+
+.recipe__card .country__flag {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  right: 0;
+  top: 0;
 }
 
 .recipe__card:hover {
