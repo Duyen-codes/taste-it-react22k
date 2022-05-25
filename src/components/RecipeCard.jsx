@@ -6,8 +6,6 @@ const RecipeCard = ({
   name,
   description,
   imageURL,
-  ingredients,
-  instructions,
   country,
   recipe,
   remove,
