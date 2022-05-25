@@ -5,7 +5,6 @@ import RecipeList from "./components/RecipeList";
 import RecipeForm from "./components/RecipeForm";
 import RecipeSingle from "./components/RecipeSingle";
 import Header from "./components/Header";
-import axios from "axios";
 
 const App = () => {
   return (
