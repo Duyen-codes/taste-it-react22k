@@ -104,6 +104,54 @@
         }
       ],
       "id": 26
+    },
+    {
+      "name": "salmon soup",
+      "author": "Lauri",
+      "origin": "FI",
+      "description": "Traditional finnish salmon soup.",
+      "imageURL": "https://images.unsplash.com/photo-1633672056690-cb422ef9dafe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+      "instructions": "cook salmon and vegetables, add milk for deep flavour. ",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "unit": "kg",
+          "ingredientName": "salmon"
+        }
+      ],
+      "id": 27
+    },
+    {
+      "name": "rice",
+      "author": "Nam",
+      "origin": "JP",
+      "description": "japanese rice",
+      "imageURL": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "instructions": "Pour double amount of water and rice to pot, cook until ready.",
+      "ingredients": [
+        {
+          "quantity": "-58",
+          "unit": "kg",
+          "ingredientName": "rice"
+        }
+      ],
+      "id": 28
+    },
+    {
+      "name": "Banh xeo",
+      "author": "Emily",
+      "origin": "GH",
+      "description": "New sizzling pancake from Ghana",
+      "imageURL": "https://images.unsplash.com/photo-1583579366799-7106fb626a54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+      "instructions": "Mix egg, milk and flour together, pour to hot pan to make. ",
+      "ingredients": [
+        {
+          "quantity": "500",
+          "unit": "grams",
+          "ingredientName": "rice flour"
+        }
+      ],
+      "id": 29
     }
   ]
 }

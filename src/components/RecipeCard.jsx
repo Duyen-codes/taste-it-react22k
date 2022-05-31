@@ -16,7 +16,7 @@ const RecipeCard = ({
       <button onClick={() => remove(id)}>X</button>
       <img src={imageURL} alt={name} />
       <img
-        src={country.flag}
+        src={country.flags.svg}
         alt={country.name}
         className={styles["country__flag"]}
       />

@@ -78,6 +78,7 @@ const AddNewRecipe = (props) => {
   };
 
   const handleSubmit = async (event) => {
+    console.log(origin);
     event.preventDefault();
     axios
       .post("http://localhost:3001/recipes", {
@@ -111,7 +112,6 @@ const AddNewRecipe = (props) => {
 
   // handle remove ingredient
   const handleRemoveIngredient = () => {
-    console.log("remove clicked");
     if (ingredients.length > 1) {
       const ingredientStore = [...ingredients];
       ingredientStore.pop();
@@ -145,17 +145,14 @@ const AddNewRecipe = (props) => {
         </div>
         <div>
           <label htmlFor="origin">Recipe is from:</label>
-          <select
-            name="origin"
-            id="origin"
-            onChange={handleChange}
-            value={inputData.origin}
-          >
-            {countries.map((country, index) => (
-              <option key={index} value={country.alpha2Code}>
-                {country.name.common}
-              </option>
-            ))}
+          <select name="origin" id="origin" onChange={handleChange}>
+            {countries.map((country, index) => {
+              return (
+                <option key={index} value={country.cca2}>
+                  {country.name.common}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div>
@@ -231,9 +228,7 @@ const AddNewRecipe = (props) => {
             rows="10"
           ></textarea>
         </div>
-        <button type="submit" onClick={handleSubmit}>
-          Post recipe
-        </button>
+        <button type="submit">Post recipe</button>
       </form>
     </div>
   );

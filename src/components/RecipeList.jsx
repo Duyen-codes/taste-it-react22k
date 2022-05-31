@@ -61,17 +61,21 @@ const RecipeList = (props) => {
         placeholder="Search recipe..."
       />
       <ul className={styles.recipe__cards}>
-        {filteredRecipes().map((recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            id={recipe.id}
-            recipe={recipe}
-            country={countries.find(
-              (country) => country.alpha2Code === recipe.origin
-            )}
-            {...recipe}
-          />
-        ))}
+        {filteredRecipes().map((recipe) => {
+          return (
+            <RecipeCard
+              key={recipe.id}
+              id={recipe.id}
+              recipe={recipe}
+              country={countries.find(
+                (country) =>
+                  country.alpha2Code.toLowerCase() ===
+                  recipe.origin.toLowerCase()
+              )}
+              {...recipe}
+            />
+          );
+        })}
       </ul>
     </div>
   );
