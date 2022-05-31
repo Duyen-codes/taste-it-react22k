@@ -152,6 +152,22 @@
         }
       ],
       "id": 29
+    },
+    {
+      "name": "Bo kho",
+      "author": "Christine",
+      "origin": "VN",
+      "description": "Beef stew in Vietnam",
+      "imageURL": "https://images.unsplash.com/photo-1604908177453-7462950a6a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1657&q=80",
+      "instructions": "Cook beef with carrot until soft. Enjoy ",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "unit": "kg",
+          "ingredientName": "beef"
+        }
+      ],
+      "id": 30
     }
   ]
 }

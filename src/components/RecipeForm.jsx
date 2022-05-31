@@ -8,9 +8,11 @@ const AddNewRecipe = (props) => {
 
   /// fetch countries data
   useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/all").then((res) => {
-      setCountries(res.data);
-    });
+    const getCountries = async () => {
+      const response = await axios.get("https://restcountries.com/v3.1/all");
+      setCountries(response.data);
+    };
+    getCountries();
   }, []);
 
   // form input state
@@ -176,11 +178,18 @@ const AddNewRecipe = (props) => {
             value={inputData.imageURL}
           />
         </div>
-
-        {
-          // render ingredients
-          ingredients.map((_, index) => (
-            <div key={`ingredientName ${index}`}>
+        {/* render ingredients */}
+        {ingredients.map((ingredient, index) => {
+          return (
+            <div key={index}>
+              <label htmlFor="ingredientName">ingredient name</label>
+              <input
+                type="text"
+                id="ingredientName"
+                name="ingredientName"
+                onChange={(event) => handleIngredientNameChange(event, index)}
+                value={ingredients[index].ingredientName}
+              />
               <label htmlFor="quantity">Quantity</label>
               <input
                 type="number"
@@ -199,24 +208,15 @@ const AddNewRecipe = (props) => {
                 onChange={(event) => handleIngredientUnitChange(event, index)}
                 value={ingredients[index].unit}
               />
-              <label htmlFor="ingredientName">ingredient name</label>
-              <input
-                type="text"
-                id="ingredientName"
-                name="ingredientName"
-                onChange={(event) => handleIngredientNameChange(event, index)}
-                value={ingredients[index].ingredientName}
-              />
             </div>
-          ))
-        }
+          );
+        })}
         <button onClick={handleAddMore} type="button">
           Add more
         </button>
         <button type="button" onClick={handleRemoveIngredient}>
           Remove
         </button>
-
         <div>
           <label htmlFor="instructions">Instructions</label>
           <textarea
