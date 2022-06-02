@@ -8,11 +8,11 @@ const AddNewRecipe = (props) => {
 
   /// fetch countries data
   useEffect(() => {
-    const getCountries = async () => {
+    const fetchCountries = async () => {
       const response = await axios.get("https://restcountries.com/v3.1/all");
       setCountries(response.data);
     };
-    getCountries();
+    fetchCountries();
   }, []);
 
   // form input state
@@ -40,39 +40,14 @@ const AddNewRecipe = (props) => {
   };
 
   // Handle ingredient name change
-  const handleIngredientNameChange = (e, ingredientIndex) => {
-    const newIngredientName = e.target.value;
+  const handleIngredientChange = (e, ingredientIndex) => {
     setIngredients(
       ingredients.map((ingredient, index) => {
         if (index === ingredientIndex) {
-          return { ...ingredient, ingredientName: newIngredientName };
-        }
-        return ingredient;
-      })
-    );
-  };
-
-  // handle ingredient quantity change
-  const handleIngredientQuantityChange = (e, ingredientIndex) => {
-    const newIngredientQuantity = e.target.value;
-    setIngredients(
-      ingredients.map((ingredient, index) => {
-        if (index === ingredientIndex) {
-          // 3 equal signs, 2 will give warning
-          return { ...ingredient, quantity: newIngredientQuantity };
-        }
-        return ingredient;
-      })
-    );
-  };
-
-  // handle ingredient unit change
-  const handleIngredientUnitChange = (e, ingredientIndex) => {
-    const newIngredientUnit = e.target.value;
-    setIngredients(
-      ingredients.map((ingredient, index) => {
-        if (index === ingredientIndex) {
-          return { ...ingredient, unit: newIngredientUnit };
+          return {
+            ...ingredient,
+            [e.target.name]: e.target.value,
+          };
         }
         return ingredient;
       })
@@ -80,9 +55,8 @@ const AddNewRecipe = (props) => {
   };
 
   const handleSubmit = async (event) => {
-    console.log(origin);
     event.preventDefault();
-    axios
+    await axios
       .post("http://localhost:3001/recipes", {
         ...inputData,
         ingredients: ingredients,
@@ -101,7 +75,7 @@ const AddNewRecipe = (props) => {
       imageURL: "",
       instructions: "",
     });
-    setIngredients({ quantity: "", unit: "", ingredientName: "" });
+    setIngredients([{ quantity: "", unit: "", ingredientName: "" }]);
   };
 
   // handle add more ingredient fields
@@ -146,15 +120,17 @@ const AddNewRecipe = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="origin">Recipe is from:</label>
+          <label htmlFor="origin">Recipe's origin:</label>
           <select name="origin" id="origin" onChange={handleChange}>
-            {countries.map((country, index) => {
-              return (
-                <option key={index} value={country.cca2}>
-                  {country.name.common}
-                </option>
-              );
-            })}
+            {countries
+              .sort((a, b) => a.name.common.localeCompare(b.name.common))
+              .map((country) => {
+                return (
+                  <option key={country.cca2} value={country.cca2}>
+                    {country.name.common}
+                  </option>
+                );
+              })}
           </select>
         </div>
         <div>
@@ -178,8 +154,8 @@ const AddNewRecipe = (props) => {
             value={inputData.imageURL}
           />
         </div>
-        {/* render ingredients */}
         {ingredients.map((ingredient, index) => {
+          console.log(ingredient);
           return (
             <div key={index}>
               <label htmlFor="ingredientName">ingredient name</label>
@@ -187,7 +163,7 @@ const AddNewRecipe = (props) => {
                 type="text"
                 id="ingredientName"
                 name="ingredientName"
-                onChange={(event) => handleIngredientNameChange(event, index)}
+                onChange={(event) => handleIngredientChange(event, index)}
                 value={ingredients[index].ingredientName}
               />
               <label htmlFor="quantity">Quantity</label>
@@ -195,9 +171,7 @@ const AddNewRecipe = (props) => {
                 type="number"
                 id="quantity"
                 name="quantity"
-                onChange={(event) =>
-                  handleIngredientQuantityChange(event, index)
-                }
+                onChange={(event) => handleIngredientChange(event, index)}
                 value={ingredients[index].quantity}
               />
               <label htmlFor="unit">Unit</label>
@@ -205,7 +179,7 @@ const AddNewRecipe = (props) => {
                 type="text"
                 id="unit"
                 name="unit"
-                onChange={(event) => handleIngredientUnitChange(event, index)}
+                onChange={(event) => handleIngredientChange(event, index)}
                 value={ingredients[index].unit}
               />
             </div>

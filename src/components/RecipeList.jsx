@@ -33,19 +33,31 @@ const RecipeList = (props) => {
     });
   };
 
-  const fetchRecipes = () => axios.get("http://localhost:3001/recipes");
-  const fetchCountries = () => axios.get("https://restcountries.com/v2/all");
+  const fetchRecipes = async () => {
+    const recipeData = await axios.get("http://localhost:3001/recipes");
+    setRecipes(recipeData.data);
+  };
+
+  const fetchCountries = async () => {
+    const countryData = await axios.get("https://restcountries.com/v2/all");
+    setCountries(countryData.data);
+  };
 
   useEffect(() => {
     setLoading(true);
-    Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
-      // results is an array of 2 promise objects
-      const recipesData = results[0].data;
-      const countriesData = results[1].data;
-      setRecipes(recipesData);
-      setCountries(countriesData);
-      setLoading(false);
-    });
+    // Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
+    //   // results is an array of 2 promise objects
+    //   console.log(results);
+    //   const recipesData = results[0].data;
+    //   const countriesData = results[1].data;
+    //   setRecipes(recipesData);
+    //   setCountries(countriesData);
+    //   setLoading(false);
+    // }
+    // );
+    fetchRecipes();
+    fetchCountries();
+    setLoading(false);
   }, []);
 
   if (loading) {
