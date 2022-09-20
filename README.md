@@ -48,3 +48,7 @@ git checkout -b my-branch
 ```
 git checkout master
 ```
+
+Screenshot of code analysis
+
+![sonarqube analysis](sonarqube.png)
