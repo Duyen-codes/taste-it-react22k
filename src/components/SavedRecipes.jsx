@@ -6,7 +6,7 @@ import classes from "./RecipeList.module.css";
 const SavedRecipes = (props) => {
   const { savedRecipes, countries, handleSaveRecipes, handleUnSaveRecipes } =
     props;
-  console.log("savedRecipes component", savedRecipes);
+
   return (
     <div>
       <h2> Saved Recipes</h2>

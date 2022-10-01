@@ -41,19 +41,29 @@ const RecipeCard = (props) => {
         className={styles["country__flag"]}
       />
       {savedRecipes.includes(recipe) ? (
-        <FavoriteIcon onClick={() => handleClickUnsave(id)} />
-      ) : (
         <span
+          onClick={() => handleClickUnsave(id)}
           style={{
             display: "flex",
             justifyContent: "flex-end",
             padding: "0 1rem",
           }}
         >
-          <FavoriteBorderIcon
-            sx={{ fontSize: "3rem", cursor: "pointer" }}
-            onClick={() => handleClickSave(id)}
+          <FavoriteIcon
+            sx={{ fontSize: "3rem", cursor: "pointer", color: "#a18f79" }}
           />
+        </span>
+      ) : (
+        <span
+          onClick={() => handleClickSave(id)}
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            padding: "0 1rem",
+            backgroundColor: "transparent",
+          }}
+        >
+          <FavoriteBorderIcon sx={{ fontSize: "3rem", cursor: "pointer" }} />
         </span>
       )}
 
