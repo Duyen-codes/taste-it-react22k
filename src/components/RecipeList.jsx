@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.module.css";
 import axios from "axios";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([]);
@@ -79,6 +80,7 @@ const RecipeList = (props) => {
               key={recipe.id}
               id={recipe.id}
               recipe={recipe}
+              handleRemove={handleRemove}
               country={countries.find(
                 (country) =>
                   country.alpha2Code.toLowerCase() ===
