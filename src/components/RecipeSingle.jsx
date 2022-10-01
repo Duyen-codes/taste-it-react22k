@@ -16,52 +16,58 @@ const RecipeSingle = (props) => {
         <KeyboardBackspaceIcon />
         Go back
       </button>
-      <h2>{recipe.name}</h2>
-      <div>
-        <section className={styles["recipe__single-top"]}>
-          <div className={styles["image__wrapper"]}>
-            <img src={recipe.imageURL} alt={recipe.name} />
-            <img
-              className={styles["country__flag"]}
-              src={country.flag}
-              alt={country.name}
-            />
-          </div>
-          <div>
-            <h3>Description</h3>
-            <p>{recipe.description}</p>
-          </div>
-        </section>
 
-        <section className={styles["recipe__single-bottom"]}>
-          <div>
-            <h2>
-              <span>Ingredients</span>
-            </h2>
-            <ul>
-              {recipe?.ingredients?.map((item) => (
-                <li
-                  key={item?.ingredientName}
-                  className={styles["recipe__subsection--ingredient"]}
-                >
-                  <span className={styles["recipe__ingredient--amount"]}>
-                    {item?.ingredientName}
-                  </span>
-                  <span>
-                    {item?.quantity}
-                    {item?.unit}
-                  </span>
-                </li>
-              ))}
-            </ul>
+      <section className={styles["recipe__single-top"]}>
+        <div className={styles["image__wrapper"]}>
+          <img
+            src={recipe.imageURL}
+            alt={recipe.name}
+            className={styles["recipe-image"]}
+          />
+          <img
+            className={styles["country__flag"]}
+            src={country.flag}
+            alt={country.name}
+          />
+
+          <div className={styles["recipe-header-text"]}>
+            <h2 className={styles["recipe-heading"]}>{recipe.name}</h2>
+            <div className={styles["recipe-description"]}>
+              <p>{recipe.description}</p>
+            </div>
           </div>
-          <div>
-            <h2>Instructions</h2>
-            <p>{recipe.instructions}</p>
-            <p>{recipe.description}</p>
-          </div>
-        </section>
-      </div>
+        </div>
+        <div className={styles["recipe-overview"]}></div>
+      </section>
+
+      <section className={styles["recipe__single-bottom"]}>
+        <div className={styles["recipe-ingredients"]}>
+          <h2>
+            <span>Ingredients</span>
+          </h2>
+          <ul>
+            {recipe?.ingredients?.map((item) => (
+              <li
+                key={item?.ingredientName}
+                className={styles["recipe__subsection--ingredient"]}
+              >
+                <span className={styles["recipe-ingredient-amount"]}>
+                  {item?.quantity}
+                  {item?.unit}
+                </span>
+                <span className={styles["recipe-ingredient-name"]}>
+                  {item?.ingredientName}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles["recipe-instructions"]}>
+          <h2>Instructions</h2>
+          <p>{recipe.instructions}</p>
+          <p>{recipe.description}</p>
+        </div>
+      </section>
     </div>
   );
 };
