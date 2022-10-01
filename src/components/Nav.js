@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { IconButton } from "@mui/material";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { savedRecipes } = props;
   let activeStyle = {
     textDecoration: "underline",
   };
@@ -33,7 +33,7 @@ const Nav = () => {
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Add new recipe
+            Add recipe
           </NavLink>
         </li>
         <li>
@@ -44,7 +44,7 @@ const Nav = () => {
             <IconButton>
               <FavoriteBorderIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
-            Saved recipes
+            Saved recipes {savedRecipes.length > 0 ? savedRecipes.length : ""}
           </NavLink>
         </li>
       </ul>

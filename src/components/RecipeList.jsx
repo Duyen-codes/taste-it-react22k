@@ -4,11 +4,19 @@ import styles from "./RecipeList.module.css";
 import axios from "axios";
 
 const RecipeList = (props) => {
-  const [recipes, setRecipes] = useState([]);
-  const [countries, setCountries] = useState([]);
+  const {
+    recipes,
+    setRecipes,
+    savedRecipes,
+    setSavedRecipes,
+    handleSaveRecipes,
+    countries,
+    setCountries,
+    handleUnSaveRecipes,
+  } = props;
+
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [savedRecipes, setSavedRecipes] = useState();
 
   // handle search recipe
   const handleSearch = (e) => {
@@ -44,10 +52,6 @@ const RecipeList = (props) => {
     setCountries(countryData.data);
   };
 
-  const handleSaveRecipes = () => {
-    console.log("handle save");
-  };
-
   useEffect(() => {
     setLoading(true);
     // Promise.all([fetchRecipes(), fetchCountries()]).then(function (results) {
@@ -77,26 +81,28 @@ const RecipeList = (props) => {
         value={search}
         placeholder="Search recipe..."
       />
-      <ul className={styles.recipe__cards}>
+      <div className={styles.recipe__cards}>
         {recipesToShow().map((recipe) => {
           return (
             <RecipeCard
               key={recipe.id}
-              id={recipe.id}
-              recipe={recipe}
+              // id={recipe.id}
+              // recipe={recipe}
               handleRemove={handleRemove}
               country={countries.find(
                 (country) =>
                   country.alpha2Code.toLowerCase() ===
                   recipe.origin.toLowerCase()
               )}
-              {...recipe}
+              recipe={recipe}
               savedRecipes={savedRecipes}
               setSavedRecipes={setSavedRecipes}
+              handleSaveRecipes={handleSaveRecipes}
+              handleUnSaveRecipes={handleUnSaveRecipes}
             />
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

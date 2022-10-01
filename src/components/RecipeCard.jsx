@@ -4,19 +4,27 @@ import styles from "./RecipeCard.module.css";
 import ClearIcon from "@mui/icons-material/Clear";
 import { IconButton } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const RecipeCard = ({
-  name,
-  description,
-  imageURL,
-  country,
-  recipe,
-  handleRemove,
-  id,
-}) => {
-  const handleSaveRecipes = () => {
-    console.log("click saved");
+const RecipeCard = (props) => {
+  const {
+    recipe,
+    handleRemove,
+    handleSaveRecipes,
+    country,
+    savedRecipes,
+    handleUnSaveRecipes,
+  } = props;
+  const { imageURL, id, name, description } = props.recipe;
+
+  const handleClickSave = (id) => {
+    handleSaveRecipes(id);
   };
+
+  const handleClickUnsave = (id) => {
+    handleUnSaveRecipes(id);
+  };
+
   return (
     <div className={styles["recipe__card"]}>
       <IconButton
@@ -26,25 +34,28 @@ const RecipeCard = ({
       >
         <ClearIcon fontSize="large" />
       </IconButton>
-
       <img src={imageURL} alt={name} />
       <img
         src={country?.flags.svg}
         alt={country?.name}
         className={styles["country__flag"]}
       />
-      <span
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          padding: "0 1rem",
-        }}
-      >
-        <FavoriteBorderIcon
-          sx={{ fontSize: "3rem", cursor: "pointer" }}
-          onClick={() => handleSaveRecipes()}
-        />
-      </span>
+      {savedRecipes.includes(recipe) ? (
+        <FavoriteIcon onClick={() => handleClickUnsave(id)} />
+      ) : (
+        <span
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            padding: "0 1rem",
+          }}
+        >
+          <FavoriteBorderIcon
+            sx={{ fontSize: "3rem", cursor: "pointer" }}
+            onClick={() => handleClickSave(id)}
+          />
+        </span>
+      )}
 
       <div className={styles["recipe__card-content"]}>
         <h2>{name}</h2>

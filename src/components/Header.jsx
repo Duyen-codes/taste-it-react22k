@@ -3,11 +3,13 @@ import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = (props) => {
+  const { savedRecipes } = props;
+
   return (
     <header className={styles.header}>
       <Link to="/">TasteIT</Link>
-      <Nav />
+      <Nav savedRecipes={savedRecipes} />
     </header>
   );
 };
