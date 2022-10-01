@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.module.css";
 import axios from "axios";
-import ClearIcon from "@mui/icons-material/Clear";
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([]);
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+  const [savedRecipes, setSavedRecipes] = useState();
 
-  // handle search
+  // handle search recipe
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const filteredRecipes = () => {
+  const recipesToShow = () => {
     if (search === "") {
       return recipes;
     }
@@ -24,7 +24,7 @@ const RecipeList = (props) => {
     });
   };
 
-  // handle remove
+  // handle remove one recipe
   const handleRemove = (id) => {
     axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
       const remainedRecipes = recipes.filter((recipe) => {
@@ -42,6 +42,10 @@ const RecipeList = (props) => {
   const fetchCountries = async () => {
     const countryData = await axios.get("https://restcountries.com/v2/all");
     setCountries(countryData.data);
+  };
+
+  const handleSaveRecipes = () => {
+    console.log("handle save");
   };
 
   useEffect(() => {
@@ -66,7 +70,7 @@ const RecipeList = (props) => {
   }
   return (
     <div className={styles.recipeList}>
-      <h2>Recipes</h2>
+      <h2>All Recipes</h2>
       <input
         type="search"
         onChange={handleSearch}
@@ -74,7 +78,7 @@ const RecipeList = (props) => {
         placeholder="Search recipe..."
       />
       <ul className={styles.recipe__cards}>
-        {filteredRecipes().map((recipe) => {
+        {recipesToShow().map((recipe) => {
           return (
             <RecipeCard
               key={recipe.id}
@@ -87,6 +91,8 @@ const RecipeList = (props) => {
                   recipe.origin.toLowerCase()
               )}
               {...recipe}
+              savedRecipes={savedRecipes}
+              setSavedRecipes={setSavedRecipes}
             />
           );
         })}

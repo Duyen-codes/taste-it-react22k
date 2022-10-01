@@ -9,10 +9,6 @@
   width: 300px;
 }
 
-.recipeList a {
-  color: #a18f79;
-}
-
 /* RecipeList  */
 .recipe__cards {
   display: grid;

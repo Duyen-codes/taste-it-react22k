@@ -40,12 +40,12 @@ const Home = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
               amet.
             </p>
-            <a
-              href="https://www.bc.fi/?gclid=Cj0KCQjwhLKUBhDiARIsAMaTLnEGWdBwQUIi5RJpZKr3tYXluF_oOVdM4OwUqvTsdwaJSv14MnfYjLwaAg6gEALw_wcB"
+            <Link
+              to="https://www.bc.fi/?gclid=Cj0KCQjwhLKUBhDiARIsAMaTLnEGWdBwQUIi5RJpZKr3tYXluF_oOVdM4OwUqvTsdwaJSv14MnfYjLwaAg6gEALw_wcB"
               target="_blank"
             >
               Business College helsinki
-            </a>
+            </Link>
           </div>
         </div>
       </div>

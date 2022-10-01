@@ -1,15 +1,21 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./RecipeSingle.module.css";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 const RecipeSingle = (props) => {
   const location = useLocation();
   const recipe = location.state.recipe;
   const { country } = location.state;
 
+  const navigate = useNavigate();
+
   return (
     <div className={styles["recipe__single"]}>
-      <Link to="/recipes">Go back</Link>
+      <button onClick={() => navigate(-1)}>
+        <KeyboardBackspaceIcon />
+        Go back
+      </button>
       <h2>{recipe.name}</h2>
       <div>
         <section className={styles["recipe__single-top"]}>
@@ -21,8 +27,10 @@ const RecipeSingle = (props) => {
               alt={country.name}
             />
           </div>
-
-          <p>{recipe.description}</p>
+          <div>
+            <h3>Description</h3>
+            <p>{recipe.description}</p>
+          </div>
         </section>
 
         <section className={styles["recipe__single-bottom"]}>

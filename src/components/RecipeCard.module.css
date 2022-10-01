@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
   position: relative; /* to position x */
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .recipe__card .country__flag {
   position: absolute;
-  width: 90px;
+  width: 80px;
   height: auto;
-  right: 0;
+  left: 0;
   top: 0;
 }
 
@@ -24,15 +24,16 @@
   height: 200px;
 }
 
-.recipe__card > button {
+.removeButton {
   position: absolute;
-  background: transparent;
-  top: 1rem;
-  right: 1rem;
-  padding: 1rem;
-  color: white;
+  top: 0;
+  right: 0;
 }
 
-.recipe__card > button:hover {
+.removeButton:hover {
   background: #c2ae94;
+}
+
+.recipe__card a {
+  color: #a18f79;
 }

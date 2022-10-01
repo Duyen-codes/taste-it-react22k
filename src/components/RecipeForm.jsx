@@ -154,37 +154,48 @@ const AddNewRecipe = (props) => {
             value={inputData.imageURL}
           />
         </div>
-        {ingredients.map((ingredient, index) => {
-          console.log(ingredient);
-          return (
-            <div key={index}>
-              <label htmlFor="ingredientName">ingredient name</label>
-              <input
-                type="text"
-                id="ingredientName"
-                name="ingredientName"
-                onChange={(event) => handleIngredientChange(event, index)}
-                value={ingredients[index].ingredientName}
-              />
-              <label htmlFor="quantity">Quantity</label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                onChange={(event) => handleIngredientChange(event, index)}
-                value={ingredients[index].quantity}
-              />
-              <label htmlFor="unit">Unit</label>
-              <input
-                type="text"
-                id="unit"
-                name="unit"
-                onChange={(event) => handleIngredientChange(event, index)}
-                value={ingredients[index].unit}
-              />
-            </div>
-          );
-        })}
+        <div>
+          <em>Ingredients:</em>
+        </div>
+        <div>
+          {ingredients.map((ingredient, index) => {
+            return (
+              <div key={index} className={styles.ingredients}>
+                <div>
+                  <label htmlFor="ingredientName">Ingredient name</label>
+                  <input
+                    type="text"
+                    id="ingredientName"
+                    name="ingredientName"
+                    onChange={(event) => handleIngredientChange(event, index)}
+                    value={ingredients[index].ingredientName}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="quantity">Quantity</label>
+                  <input
+                    type="number"
+                    min="0"
+                    id="quantity"
+                    name="quantity"
+                    onChange={(event) => handleIngredientChange(event, index)}
+                    value={ingredients[index].quantity}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="unit">Unit</label>
+                  <input
+                    type="text"
+                    id="unit"
+                    name="unit"
+                    onChange={(event) => handleIngredientChange(event, index)}
+                    value={ingredients[index].unit}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <button onClick={handleAddMore} type="button">
           Add more
         </button>

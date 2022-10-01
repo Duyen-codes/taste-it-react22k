@@ -11,11 +11,11 @@
 }
 
 .newRecipeForm div {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 label {
-  display: block;
+  display: inline-block;
   margin-bottom: 0.5rem;
 }
 
@@ -32,4 +32,10 @@ select {
   background: #a18f79;
   color: #fff;
   margin-right: 2rem;
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 }
