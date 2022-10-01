@@ -61,9 +61,6 @@ const AddNewRecipe = (props) => {
         ...inputData,
         ingredients: ingredients,
       })
-      .then((res) => {
-        console.log(res);
-      })
       .catch((error) => {
         console.log(error);
       });

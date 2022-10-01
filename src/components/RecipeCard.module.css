@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   position: relative; /* to position x */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .recipe__card .country__flag {
@@ -39,4 +40,11 @@
 
 .recipe__card-content {
   padding-inline: 1rem;
+}
+
+@media screen and (min-width: 660px) {
+  .recipe__card {
+    max-width: 100%;
+    padding: 8px;
+  }
 }

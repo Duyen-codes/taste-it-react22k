@@ -142,6 +142,27 @@
         }
       ],
       "id": 31
+    },
+    {
+      "name": "new dish",
+      "author": "author",
+      "origin": "",
+      "description": "best recipe ever",
+      "imageURL": "kjgdkagjkg",
+      "instructions": "some instructions to cook the dish",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "unit": "kpl",
+          "ingredientName": "egg"
+        },
+        {
+          "quantity": "1",
+          "unit": "kg",
+          "ingredientName": "vegetables"
+        }
+      ],
+      "id": 32
     }
   ]
 }

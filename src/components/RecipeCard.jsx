@@ -26,7 +26,7 @@ const RecipeCard = (props) => {
   };
 
   return (
-    <div className={styles["recipe__card"]}>
+    <li className={styles["recipe__card"]}>
       <IconButton
         className={styles.removeButton}
         onClick={() => handleRemove(id)}
@@ -34,7 +34,14 @@ const RecipeCard = (props) => {
       >
         <ClearIcon fontSize="large" />
       </IconButton>
-      <img src={imageURL} alt={name} />
+      <img
+        src={
+          imageURL.includes("http")
+            ? imageURL
+            : "https://source.unsplash.com/1600x900/?food"
+        }
+        alt={name}
+      />
       <img
         src={country?.flags.svg}
         alt={country?.name}
@@ -80,7 +87,7 @@ const RecipeCard = (props) => {
           See more
         </Link>
       </div>
-    </div>
+    </li>
   );
 };
 
