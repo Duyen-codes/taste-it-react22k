@@ -1,6 +1,7 @@
 # Recipe App
 
 An app to browse cooking recipes and also create and save your own. This is a school project during fullstack studies at Business College Helsinki.
+![Alt text](live-preview.png)
 
 ## Installation
 
