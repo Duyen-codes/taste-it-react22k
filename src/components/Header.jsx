@@ -33,12 +33,16 @@ const Header = (props) => {
       {isVisible && (
         <div className={styles["menu-mobile-overlay"]}>
           <div className={styles["mobile-navigation__menu"]}>
-            <ul className={styles["mobile-navigation__menu-items"]}>
+            <ul
+              className={styles["mobile-navigation__menu-items"]}
+              onClick={() => setIsVisible(!isVisible)}
+            >
+              {/* Link to home page for now  */}
               <li>
-                <Link to="/qa">Q&A</Link>
+                <Link to="/recipes">Q&A</Link>
               </li>
               <li>
-                <Link to="contact">Contact</Link>
+                <Link to="/addRecipe">Contact</Link>
               </li>
             </ul>
           </div>
