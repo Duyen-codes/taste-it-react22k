@@ -27,13 +27,9 @@ const RecipeCard = (props) => {
 
   return (
     <li className={styles["recipe__card"]}>
-      <IconButton
-        className={styles.removeButton}
-        onClick={() => handleRemove(id)}
-        sx={{ position: "absolute", color: "#a18f79", top: "0", right: "0" }}
-      >
+      <button className={styles.removeButton} onClick={() => handleRemove(id)}>
         <ClearIcon fontSize="large" />
-      </IconButton>
+      </button>
       <img
         src={
           imageURL.includes("http")

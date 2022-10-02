@@ -28,10 +28,15 @@
   position: absolute;
   top: 0;
   right: 0;
+  color: #c2ae94;
+  border: none;
+  background: 0 0;
+  padding: 5px;
 }
 
 .removeButton:hover {
   background: #c2ae94;
+  color: white;
 }
 
 .recipe__card a {
@@ -45,6 +50,5 @@
 @media screen and (min-width: 660px) {
   .recipe__card {
     max-width: 100%;
-    padding: 8px;
   }
 }
