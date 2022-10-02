@@ -23,6 +23,13 @@
   padding: 1px 6px;
   border-top: 3px solid transparent;
 }
+
+.main-logo {
+  flex: 0 0 auto;
+  padding: 0 8px;
+  color: #a18f79;
+}
+
 @media only screen and (min-width: 1024px) {
   .mobile-navigation {
     display: none;
