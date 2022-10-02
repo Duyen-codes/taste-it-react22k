@@ -14,7 +14,7 @@ const Nav = (props) => {
   return (
     <nav className={styles["main-navigation"]}>
       <ul className={styles["visible-desktop"]}>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink
             to="recipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -22,7 +22,7 @@ const Nav = (props) => {
             Link
           </NavLink>
         </li>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -32,7 +32,7 @@ const Nav = (props) => {
         </li>
       </ul>
       <ul>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink
             to="recipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -40,7 +40,7 @@ const Nav = (props) => {
             Recipes
           </NavLink>
         </li>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -48,7 +48,7 @@ const Nav = (props) => {
             Add recipe
           </NavLink>
         </li>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink
             to="savedRecipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -59,7 +59,7 @@ const Nav = (props) => {
             {savedRecipes.length > 0 ? savedRecipes.length : ""}
           </NavLink>
         </li>
-        <li>
+        <li className={styles["nav-item"]}>
           <NavLink to="/login">
             <IconButton
               sx={{
