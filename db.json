@@ -142,6 +142,32 @@
         }
       ],
       "id": 32
+    },
+    {
+      "name": "chicken curry",
+      "author": "dish author",
+      "origin": "AL",
+      "description": "tasty chicken curry for home meal ",
+      "imageURL": "jdigjiakg",
+      "instructions": "Instructions:\n- marinade chicken for at least 30 minutes\n- Cook chicken well\n- server with white rice",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "unit": "kg",
+          "ingredientName": "chicken"
+        },
+        {
+          "quantity": "1",
+          "unit": "tp",
+          "ingredientName": "curry powder"
+        },
+        {
+          "quantity": "200",
+          "unit": "gr",
+          "ingredientName": "onions"
+        }
+      ],
+      "id": 33
     }
   ]
 }
