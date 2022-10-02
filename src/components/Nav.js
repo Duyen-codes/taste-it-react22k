@@ -24,18 +24,18 @@ const Nav = (props) => {
       <ul className={styles["visible-desktop"]}>
         <li className={styles["nav-item"]}>
           <NavLink
-            to="recipes"
+            to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Link
+            Healthy
           </NavLink>
         </li>
         <li className={styles["nav-item"]}>
           <NavLink
-            to="addRecipe"
+            to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Link
+            Dinner
           </NavLink>
         </li>
       </ul>
