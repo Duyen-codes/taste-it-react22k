@@ -21,7 +21,7 @@
 }
 
 .search-field:focus-within {
-  border-color: #a18f79;
+  border-color: #a18f79 !important;
 }
 
 .search-field-icon {
