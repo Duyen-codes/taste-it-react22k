@@ -16,14 +16,6 @@ const Nav = (props) => {
       <ul className={styles["main-navigation"]}>
         <li>
           <NavLink
-            to="/"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            TasteIT
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="recipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >

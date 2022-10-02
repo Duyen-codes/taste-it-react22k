@@ -1,12 +1,30 @@
 /* Header  */
 .site-header {
+  border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f1f1f1;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  margin: auto;
+  height: 56px;
 }
 
 .header a {
   color: #a18f79;
+}
+
+.mobile-navigation {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin: 8px 8px 11px;
+  padding: 1px 6px;
+  border-top: 3px solid transparent;
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-navigation {
+    display: none;
+  }
 }
