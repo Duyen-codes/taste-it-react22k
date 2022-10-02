@@ -12,15 +12,19 @@ const Header = (props) => {
   return (
     <header className={styles["site-header"]}>
       <div className={styles["header-container"]}>
-        <button className={styles["mobile-navigation"]}></button>
-        {isVisible ? (
-          <CloseIcon
-            fontSize="large"
-            onClick={() => setIsVisible(!isVisible)}
-          />
-        ) : (
-          <MenuIcon fontSize="large" onClick={() => setIsVisible(!isVisible)} />
-        )}
+        <button className={styles["mobile-navigation"]}>
+          {isVisible ? (
+            <CloseIcon
+              fontSize="large"
+              onClick={() => setIsVisible(!isVisible)}
+            />
+          ) : (
+            <MenuIcon
+              fontSize="large"
+              onClick={() => setIsVisible(!isVisible)}
+            />
+          )}
+        </button>
         <Link className={styles["main-logo"]} to="/">
           TasteIT
         </Link>
