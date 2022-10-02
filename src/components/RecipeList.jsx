@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import styles from "./RecipeList.module.css";
 import axios from "axios";
+import SearchIcon from "@mui/icons-material/Search";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const RecipeList = (props) => {
   const {
@@ -23,7 +25,7 @@ const RecipeList = (props) => {
     setSearch(e.target.value);
   };
 
-  const recipesToShow = () => {
+  const filterRecipes = () => {
     if (search === "") {
       return recipes;
     }
@@ -32,6 +34,7 @@ const RecipeList = (props) => {
     });
   };
 
+  const recipesToShow = filterRecipes();
   // handle remove one recipe
   const handleRemove = (id) => {
     axios.delete(`http://localhost:3001/recipes/${id}`).then(() => {
@@ -75,14 +78,27 @@ const RecipeList = (props) => {
   return (
     <div className={styles.recipeList}>
       <h2>All Recipes</h2>
-      <input
-        type="search"
-        onChange={handleSearch}
-        value={search}
-        placeholder="Search recipe..."
-      />
+      <div className={styles["search-input-container"]}>
+        <div className={styles["search-field"]}>
+          <div className={styles["search-field-icon"]}>
+            <SearchIcon fontSize="large" />
+          </div>
+          <div className={styles["clearable-input"]}>
+            <input
+              type="search"
+              onChange={handleSearch}
+              value={search}
+              placeholder="Search recipe..."
+            />
+            <ClearIcon
+              fontSize="large"
+              className={styles["clearable-input__clearIcon"]}
+            />
+          </div>
+        </div>
+      </div>
       <div className={styles.recipe__cards}>
-        {recipesToShow().map((recipe) => {
+        {recipesToShow.map((recipe) => {
           return (
             <RecipeCard
               key={recipe.id}

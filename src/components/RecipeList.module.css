@@ -3,10 +3,51 @@
   padding-inline: 5rem;
 }
 
-.recipeList > input {
-  border: 1px solid #a18f79;
-  padding: 1rem;
-  width: 300px;
+.search-input-container {
+  margin: 0 16px;
+}
+
+.search-field {
+  border: 1px solid blue;
+  display: flex;
+  max-width: 640px;
+  height: 48px;
+  margin: 20px auto 0;
+  padding: 0 8px;
+  border: 2px solid #a18f79;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border 250ms ease-out;
+}
+
+.search-field-icon {
+  margin: 10px auto auto;
+}
+
+.search-field-icon > * {
+  height: 24px;
+  width: 24px;
+}
+
+.clearable-input {
+  margin: 0 8px;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.clearable-input input {
+  flex: 1 1 auto;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: 0 0;
+}
+
+.clearable-input__clearIcon {
+  margin: 0 0 0 4px;
+  cursor: pointer;
+  color: #a18f79;
 }
 
 /* RecipeList  */
