@@ -1,3 +1,28 @@
-.main-navigation {
-  border: 1px solid red;
+.main-navigation,
+.main-navigation > ul {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.main-navigation > ul {
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.visible-desktop {
+  display: none !important;
+}
+
+@media only screen and (min-width: 660px) {
+  .visible-desktop {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .visible-desktop {
+    display: inherit !important;
+  }
 }

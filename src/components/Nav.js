@@ -12,8 +12,26 @@ const Nav = (props) => {
   };
 
   return (
-    <nav>
-      <ul className={styles["main-navigation"]}>
+    <nav className={styles["main-navigation"]}>
+      <ul className={styles["visible-desktop"]}>
+        <li>
+          <NavLink
+            to="recipes"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Link
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="addRecipe"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Link
+          </NavLink>
+        </li>
+      </ul>
+      <ul>
         <li>
           <NavLink
             to="recipes"
