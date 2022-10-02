@@ -26,10 +26,12 @@ npm run server (server will run at http://localhost:3001/recipes)
 ## Built with
 
 - HTML
-- CSS
+- CSS / CSS modules
 - ReactJS
 - Flexbox
 - Grid
+- React Router
+- Responsive Design
 
 ## Resource links
 
