@@ -7,7 +7,7 @@ const Header = (props) => {
   const { savedRecipes } = props;
 
   return (
-    <header className={styles.header}>
+    <header className={styles["site-header"]}>
       <Link to="/">TasteIT</Link>
       <Nav savedRecipes={savedRecipes} />
     </header>

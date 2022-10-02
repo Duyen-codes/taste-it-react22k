@@ -1,10 +1,10 @@
 /* Header  */
-.header {
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f1f1f1;
-  padding: 2rem 5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .header a {
