@@ -24,6 +24,12 @@
   display: none !important;
 }
 
+.add-recipes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 .main-navigation .main-navi-user-info-profile-link {
   display: flex;
   position: relative;

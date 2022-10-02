@@ -50,6 +50,7 @@ const Nav = (props) => {
         </li>
         <li className={styles["nav-item"]}>
           <NavLink
+            className={styles["add-recipes-container"]}
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
@@ -57,10 +58,10 @@ const Nav = (props) => {
             <IconButton>
               <AddIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
+            <span className={styles["main-navi-item-description"]}>
+              <span className={styles["add-recipes"]}> Add recipes</span>
+            </span>
           </NavLink>
-          <span className={styles["main-navi-item-description"]}>
-            <span className={styles["add-recipes"]}> Add recipes</span>
-          </span>
         </li>
         <li
           className={`${styles["nav-item"]} ${styles["favorites-nav-item"]} `}
