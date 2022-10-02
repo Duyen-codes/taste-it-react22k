@@ -43,13 +43,12 @@ ul {
   list-style: none;
 }
 
-nav ul li {
-  display: inline-block;
-  margin-right: 3rem;
-}
-
 .header a {
   color: black;
+}
+
+:any-link {
+  cursor: pointer;
 }
 
 main {

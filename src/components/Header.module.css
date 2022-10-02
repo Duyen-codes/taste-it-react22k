@@ -66,10 +66,6 @@
   margin: 0;
 }
 
-.mobile-navigation__menu-items > * {
-  padding: 8px;
-}
-
 .mobile-navigation__menu-items > *:hover {
   background-color: #a18f79;
   color: #fff;
