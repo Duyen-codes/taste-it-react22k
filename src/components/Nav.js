@@ -50,11 +50,10 @@ const Nav = (props) => {
         </li>
         <li className={styles["nav-item"]}>
           <NavLink
-            className={styles["add-recipes-container"]}
+            className={styles["main-navi-link"]}
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            {" "}
             <IconButton>
               <AddIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
@@ -69,16 +68,18 @@ const Nav = (props) => {
           <NavLink
             to="savedRecipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={styles["main-navi-link"]}
           >
             <IconButton>
               <FavoriteBorderIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
-          </NavLink>
-          <span className={styles["main-navi-item-description"]}>
-            <span className={styles["favorites"]}>
-              Favorites {savedRecipes.length > 0 ? savedRecipes.length : ""}
+
+            <span className={styles["main-navi-item-description"]}>
+              <span className={styles["favorites"]}>
+                Favorites {savedRecipes.length > 0 ? savedRecipes.length : ""}
+              </span>
             </span>
-          </span>
+          </NavLink>
         </li>
         <li
           className={`${styles["nav-item"]} ${styles["user-info-item"]} ${

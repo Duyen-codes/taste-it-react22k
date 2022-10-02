@@ -8,7 +8,7 @@ const SavedRecipes = (props) => {
     props;
 
   return (
-    <div>
+    <div className={classes.recipeList}>
       <h2> Saved Recipes</h2>
       <div className={classes.recipe__cards}>
         {savedRecipes &&
