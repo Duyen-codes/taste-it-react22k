@@ -1,27 +1,6 @@
 {
   "recipes": [
     {
-      "name": "pancake",
-      "author": "kevin",
-      "origin": "GB",
-      "description": "best american pancake",
-      "imageURL": "https://www.eatthis.com/wp-content/uploads/sites/4/2019/11/whole-grain-pancake-stack.jpg",
-      "instructions": "mix all ingredients and make pancake.",
-      "ingredients": [
-        {
-          "quantity": "350",
-          "unit": "grams",
-          "ingredientName": "flour"
-        },
-        {
-          "quantity": "2",
-          "unit": "kpl",
-          "ingredientName": "eggs"
-        }
-      ],
-      "id": 24
-    },
-    {
       "name": "hamburger",
       "author": "Lily",
       "origin": "US",
