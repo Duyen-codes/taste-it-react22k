@@ -9,13 +9,15 @@ const Header = (props) => {
 
   return (
     <header className={styles["site-header"]}>
-      <button className={styles["mobile-navigation"]}>
-        <MenuIcon />
-      </button>
-      <Link className={styles["main-logo"]} to="/">
-        TasteIT
-      </Link>
-      <Nav savedRecipes={savedRecipes} />
+      <div className={styles["header-container"]}>
+        <button className={styles["mobile-navigation"]}>
+          <MenuIcon fontSize="large" />
+        </button>
+        <Link className={styles["main-logo"]} to="/">
+          TasteIT
+        </Link>
+        <Nav savedRecipes={savedRecipes} />
+      </div>
     </header>
   );
 };
