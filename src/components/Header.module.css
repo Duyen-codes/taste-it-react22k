@@ -63,8 +63,18 @@
 }
 
 .mobile-navigation__menu-items {
-  padding: 8px 20px;
+  padding: 8px 0;
   margin: 0;
+}
+
+.mobile-navigation__menu-items > * {
+  padding: 8px;
+}
+
+.mobile-navigation__menu-items > *:hover {
+  background-color: #a18f79;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {
