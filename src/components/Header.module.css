@@ -35,6 +35,37 @@
   color: #a18f79;
 }
 
+/* Mobile menu  */
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .menu-mobile-overlay {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    overscroll-behavior-y: contain;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: calc(100vh - 56px);
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.mobile-navigation__menu {
+  height: calc(100vh - 56px);
+  max-width: 280px;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobile-navigation__menu {
+    display: none;
+  }
+}
+
+.mobile-navigation__menu-items {
+  padding: 8px 0;
+}
+
 @media only screen and (min-width: 1024px) {
   .mobile-navigation {
     display: none;

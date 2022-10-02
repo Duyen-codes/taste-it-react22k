@@ -18,6 +18,18 @@ const Header = (props) => {
         </Link>
         <Nav savedRecipes={savedRecipes} />
       </div>
+      <div className={styles["menu-mobile-overlay"]}>
+        <div className={styles["mobile-navigation__menu"]}>
+          <ul className={styles["mobile-navigation__menu-items"]}>
+            <li>
+              <Link to="/Q&A">Q&A</Link>
+            </li>
+            <li>
+              <Link to="contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 };
