@@ -90,10 +90,13 @@ const RecipeList = (props) => {
               value={search}
               placeholder="Search recipe..."
             />
-            <ClearIcon
-              fontSize="large"
-              className={styles["clearable-input__clearIcon"]}
-            />
+            {search && (
+              <ClearIcon
+                onClick={() => setSearch("")}
+                fontSize="large"
+                className={styles["clearable-input__clearIcon"]}
+              />
+            )}
           </div>
         </div>
       </div>
