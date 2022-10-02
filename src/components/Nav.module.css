@@ -158,17 +158,6 @@
 }
 
 @media only screen and (min-width: 0px) and (max-width: 1023px) {
-  .menu-mobile-overlay {
-    position: absolute;
-    top: 56px;
-    left: 0;
-    overscroll-behavior-y: contain;
-    background-color: rgba(0, 0, 0, 0.3);
-    height: calc(100vh - 56px);
-    width: 100%;
-    z-index: 3;
-  }
-
   #profile-menu {
     height: 100%;
     position: absolute;
@@ -177,6 +166,7 @@
     color: #333;
     z-index: 3;
     right: 0;
+    top: 58px;
   }
 }
 

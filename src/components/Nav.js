@@ -5,6 +5,7 @@ import { IconButton } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import styles from "./Nav.module.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import AddIcon from "@mui/icons-material/Add";
 
 const Nav = (props) => {
   const { savedRecipes } = props;
@@ -52,10 +53,18 @@ const Nav = (props) => {
             to="addRecipe"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Add recipe
+            {" "}
+            <IconButton>
+              <AddIcon fontSize="large" sx={{ color: "#c2ae94" }} />
+            </IconButton>
           </NavLink>
+          <span className={styles["main-navi-item-description"]}>
+            <span className={styles["add-recipes"]}> Add recipes</span>
+          </span>
         </li>
-        <li className={styles["nav-item"]}>
+        <li
+          className={`${styles["nav-item"]} ${styles["favorites-nav-item"]} `}
+        >
           <NavLink
             to="savedRecipes"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -63,8 +72,12 @@ const Nav = (props) => {
             <IconButton>
               <FavoriteBorderIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
-            {savedRecipes.length > 0 ? savedRecipes.length : ""}
           </NavLink>
+          <span className={styles["main-navi-item-description"]}>
+            <span className={styles["favorites"]}>
+              Favorites {savedRecipes.length > 0 ? savedRecipes.length : ""}
+            </span>
+          </span>
         </li>
         <li
           className={`${styles["nav-item"]} ${styles["user-info-item"]} ${
