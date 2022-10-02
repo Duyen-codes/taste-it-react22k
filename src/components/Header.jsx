@@ -8,7 +8,13 @@ const Header = (props) => {
 
   return (
     <header className={styles["site-header"]}>
-      <Link to="/">TasteIT</Link>
+      <NavLink
+        className={styles["main-logo"]}
+        to="/"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        TasteIT
+      </NavLink>
       <Nav savedRecipes={savedRecipes} />
     </header>
   );

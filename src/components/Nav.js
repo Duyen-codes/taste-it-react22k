@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { IconButton } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
+import styles from "./Nav.module.css";
 
 const Nav = (props) => {
   const { savedRecipes } = props;
@@ -12,13 +13,13 @@ const Nav = (props) => {
 
   return (
     <nav>
-      <ul>
+      <ul className={styles["main-navigation"]}>
         <li>
           <NavLink
             to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Home
+            TasteIT
           </NavLink>
         </li>
         <li>
@@ -45,7 +46,7 @@ const Nav = (props) => {
             <IconButton>
               <FavoriteBorderIcon fontSize="large" sx={{ color: "#c2ae94" }} />
             </IconButton>
-            Saved recipes {savedRecipes.length > 0 ? savedRecipes.length : ""}
+            {savedRecipes.length > 0 ? savedRecipes.length : ""}
           </NavLink>
         </li>
         <li>
@@ -57,7 +58,6 @@ const Nav = (props) => {
             >
               <PersonIcon fontSize="large" />
             </IconButton>{" "}
-            Login
           </NavLink>
         </li>
       </ul>
