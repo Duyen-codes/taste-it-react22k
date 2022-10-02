@@ -89,6 +89,8 @@ const RecipeList = (props) => {
               onChange={handleSearch}
               value={search}
               placeholder="Search recipe..."
+              autoComplete="off"
+              maxLength="100"
             />
             {search && (
               <ClearIcon

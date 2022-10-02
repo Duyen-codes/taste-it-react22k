@@ -14,10 +14,14 @@
   height: 48px;
   margin: 20px auto 0;
   padding: 0 8px;
-  border: 2px solid #a18f79;
+  border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   transition: border 250ms ease-out;
+}
+
+.search-field:focus-within {
+  border-color: #a18f79;
 }
 
 .search-field-icon {
